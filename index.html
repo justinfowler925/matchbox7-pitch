@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matchbox 7 — GTM Investment Pitch</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0f;--bg2:#111118;--bg3:#1a1a24;--accent:#7c5cff;--accent2:#ff6b6b;--accent3:#4ecdc4;--gold:#ffd700;--text:#e8e8f0;--muted:#8888a0;--border:#2a2a3a;--card:#14141e;--gradient:linear-gradient(135deg,#7c5cff 0%,#ff6b6b 50%,#4ecdc4 100%)}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.section{padding:100px 5%;max-width:1400px;margin:0 auto}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+h2{font-size:2.8rem;font-weight:700;margin-bottom:1rem}
+h3{font-size:1.6rem;font-weight:600;margin-bottom:0.5rem}
+.gradient-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.tag-purple{background:rgba(124,92,255,0.15);color:var(--accent);border:1px solid rgba(124,92,255,0.3)}
+.tag-red{background:rgba(255,107,107,0.15);color:var(--accent2);border:1px solid rgba(255,107,107,0.3)}
+.tag-green{background:rgba(78,205,196,0.15);color:var(--accent3);border:1px solid rgba(78,205,196,0.3)}
+.tag-gold{background:rgba(255,215,0,0.15);color:var(--gold);border:1px solid rgba(255,215,0,0.3)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 5%}
+nav .inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:-0.5px}
+nav .logo span{color:var(--accent)}
+nav ul{list-style:none;display:flex;gap:32px}
+nav a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+nav a:hover{color:var(--text)}
+@media(max-width:768px){nav ul{display:none}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(124,92,255,0.08) 0%,transparent 70%);pointer-events:none}
+.hero .overline{font-size:0.85rem;font-weight:600;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
+.hero .subtitle{font-size:1.3rem;color:var(--muted);max-width:700px;line-height:1.6;margin-bottom:40px}
+.hero-stats{display:flex;gap:48px;flex-wrap:wrap}
+.hero-stat{border-left:3px solid var(--accent);padding-left:16px}
+.hero-stat .num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700}
+.hero-stat .label{font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;transition:transform 0.2s,border-color 0.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card-icon{font-size:2rem;margin-bottom:16px}
+.card p{color:var(--muted);font-size:0.95rem}
+
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px}
+.problem-stat-row{display:flex;gap:24px;margin-bottom:24px}
+.problem-stat{flex:1;background:var(--bg3);border-radius:12px;padding:24px;text-align:center}
+.problem-stat .big{font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;color:var(--accent2)}
+.problem-stat .desc{font-size:0.85rem;color:var(--muted);margin-top:4px}
+@media(max-width:900px){.problem-grid{grid-template-columns:1fr}}
+
+/* SOLUTION */
+.product-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:48px}
+.product-card{background:linear-gradient(135deg,var(--card) 0%,var(--bg3) 100%);border:1px solid var(--border);border-radius:20px;padding:40px 32px;position:relative;overflow:hidden}
+.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.product-card.bar::before{background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.product-card.packet::before{background:linear-gradient(90deg,var(--accent3),var(--accent))}
+.product-card.drink::before{background:linear-gradient(90deg,var(--gold),var(--accent2))}
+.product-card h3{margin-top:12px}
+.product-card .price{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;color:var(--accent);margin:12px 0}
+.product-card ul{list-style:none;margin-top:12px}
+.product-card li{padding:6px 0;font-size:0.9rem;color:var(--muted);border-bottom:1px solid var(--border)}
+.product-card li::before{content:'→ ';color:var(--accent)}
+
+/* SCIENCE */
+.science-visual{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:48px;margin-top:48px;position:relative}
+.absorption-bar{height:40px;background:var(--bg3);border-radius:20px;margin:16px 0;overflow:hidden;position:relative}
+.absorption-fill{height:100%;border-radius:20px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem}
+.absorption-fill.monch{width:40%;background:linear-gradient(90deg,var(--accent),var(--accent3));animation:fillMonch 2s ease-out}
+.absorption-fill.standard{width:12%;background:rgba(136,136,160,0.4)}
+@keyframes fillMonch{from{width:0}to{width:40%}}
+.science-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+@media(max-width:768px){.science-grid{grid-template-columns:1fr}}
+
+/* MARKET */
+.market-sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.market-circle{text-align:center;padding:40px 20px}
+.market-circle .ring{width:160px;height:160px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;margin:0 auto 16px;font-family:'Space Grotesk',sans-serif}
+.market-circle .ring.tam{background:conic-gradient(var(--accent) 0deg,var(--accent) 360deg,var(--bg3) 360deg);padding:4px}
+.market-circle .ring.sam{background:conic-gradient(var(--accent2) 0deg,var(--accent2) 270deg,var(--bg3) 270deg);padding:4px}
+.market-circle .ring.som{background:conic-gradient(var(--accent3) 0deg,var(--accent3) 180deg,var(--bg3) 180deg);padding:4px}
+.market-circle .ring-inner{width:100%;height:100%;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column}
+.market-circle .ring-val{font-size:1.8rem;font-weight:700}
+.market-circle .ring-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+@media(max-width:768px){.market-sizes{grid-template-columns:1fr}}
+
+/* TIMELINE */
+.timeline{position:relative;margin-top:48px;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:48px;padding-left:32px}
+.timeline-item::before{content:'';position:absolute;left:-29px;top:4px;width:16px;height:16px;border-radius:50%;border:3px solid var(--accent);background:var(--bg)}
+.timeline-item.active::before{background:var(--accent);box-shadow:0 0 20px rgba(124,92,255,0.4)}
+.timeline-item h3{margin-bottom:8px}
+.timeline-item .time{font-size:0.8rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.timeline-item p{color:var(--muted);font-size:0.95rem}
+
+/* FINANCIALS */
+.fin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.fin-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center}
+.fin-card .val{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700}
+.fin-card .label{font-size:0.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.5px}
+@media(max-width:900px){.fin-grid{grid-template-columns:repeat(2,1fr)}}
+
+.revenue-chart{margin-top:48px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;overflow:hidden}
+.chart-bars{display:flex;align-items:flex-end;gap:12px;height:300px;padding-top:20px}
+.chart-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end}
+.chart-bar{width:100%;border-radius:8px 8px 0 0;min-height:4px;position:relative;transition:height 1s ease-out}
+.chart-bar.conservative{background:linear-gradient(180deg,var(--accent),rgba(124,92,255,0.4))}
+.chart-bar.base{background:linear-gradient(180deg,var(--accent3),rgba(78,205,196,0.4))}
+.chart-bar .bar-val{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:0.7rem;font-weight:600;white-space:nowrap}
+.chart-label{margin-top:8px;font-size:0.75rem;color:var(--muted);text-align:center}
+.chart-legend{display:flex;gap:24px;margin-bottom:24px}
+.chart-legend span{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--muted)}
+.chart-legend .dot{width:12px;height:12px;border-radius:3px}
+
+/* UNIT ECONOMICS */
+.unit-econ{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+.unit-block{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px}
+.unit-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:0.95rem}
+.unit-row:last-child{border-bottom:none;font-weight:700;color:var(--accent3)}
+.unit-row .lbl{color:var(--muted)}
+@media(max-width:768px){.unit-econ{grid-template-columns:1fr}}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center}
+.team-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;font-family:'Space Grotesk',sans-serif}
+.team-card .role{font-size:0.8rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.team-card .bio{font-size:0.9rem;color:var(--muted);margin-top:12px}
+
+/* MOAT */
+.moat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.moat-item{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;display:flex;gap:16px;align-items:flex-start}
+.moat-num{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--accent);line-height:1;min-width:40px}
+@media(max-width:768px){.moat-grid{grid-template-columns:1fr}}
+
+/* CATALYSTS */
+.catalyst-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:48px}
+.catalyst{background:var(--bg3);border-radius:12px;padding:24px;border-left:4px solid var(--gold)}
+.catalyst .when{font-size:0.75rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.catalyst p{font-size:0.9rem;color:var(--muted)}
+
+/* USE OF FUNDS */
+.funds-visual{margin-top:48px}
+.fund-bar{display:flex;border-radius:12px;overflow:hidden;height:48px;margin-bottom:24px}
+.fund-seg{display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:600;color:#fff;white-space:nowrap;padding:0 8px}
+.funds-detail{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.fund-item{display:flex;align-items:center;gap:12px;padding:16px;background:var(--card);border-radius:12px}
+.fund-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.fund-item .amt{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem}
+.fund-item .purpose{font-size:0.8rem;color:var(--muted)}
+
+/* BREAK-EVEN */
+.breakeven-chart{margin-top:48px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px}
+.be-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.be-bar{flex:1;height:32px;background:var(--bg3);border-radius:8px;overflow:hidden;position:relative}
+.be-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:12px;font-size:0.75rem;font-weight:600}
+.be-label{width:80px;font-size:0.85rem;color:var(--muted);text-align:right;flex-shrink:0}
+.be-val{width:80px;font-size:0.85rem;font-weight:600;flex-shrink:0}
+
+/* ASK */
+.ask-section{background:linear-gradient(135deg,rgba(124,92,255,0.05),rgba(255,107,107,0.05));border:1px solid var(--border);border-radius:24px;padding:64px;text-align:center;margin-top:48px}
+.ask-amount{font-family:'Space Grotesk',sans-serif;font-size:4rem;font-weight:800;margin:24px 0}
+.ask-terms{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px;text-align:left}
+.ask-term{padding:24px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid var(--border)}
+.ask-term h4{font-size:0.9rem;color:var(--accent);margin-bottom:8px}
+.ask-term p{font-size:0.85rem;color:var(--muted)}
+@media(max-width:768px){.ask-terms{grid-template-columns:1fr}}
+
+/* RISKS */
+.risk-table{margin-top:48px;width:100%;border-collapse:collapse}
+.risk-table th{text-align:left;padding:12px 16px;border-bottom:2px solid var(--border);font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.risk-table td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:0.9rem}
+.risk-table tr:hover{background:rgba(124,92,255,0.03)}
+.risk-badge{display:inline-block;padding:2px 10px;border-radius:10px;font-size:0.75rem;font-weight:600}
+.risk-low{background:rgba(78,205,196,0.15);color:var(--accent3)}
+.risk-med{background:rgba(255,215,0,0.15);color:var(--gold)}
+.risk-high{background:rgba(255,107,107,0.15);color:var(--accent2)}
+
+/* FOOTER */
+footer{text-align:center;padding:60px 5%;color:var(--muted);font-size:0.85rem;border-top:1px solid var(--border)}
+footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:0 5%;max-width:1400px;margin-left:auto;margin-right:auto}
+
+/* CAPACITY */
+.capacity-calc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:32px}
+.cap-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.9rem}
+.cap-row:last-child{border:none;font-weight:700;color:var(--accent3)}
+.cap-row .lbl{color:var(--muted)}
+
+/* SCENARIO TABLE */
+.scenario-table{width:100%;border-collapse:collapse;margin-top:24px}
+.scenario-table th{padding:12px 16px;text-align:left;border-bottom:2px solid var(--border);font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.scenario-table td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:0.9rem}
+.scenario-table tr:nth-child(even){background:rgba(255,255,255,0.01)}
+.highlight-row{background:rgba(124,92,255,0.05) !important;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="inner">
+<div class="logo">MATCHBOX<span>7</span></div>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a></li>
+<li><a href="#science">Science</a></li>
+<li><a href="#market">Market</a></li>
+<li><a href="#model">Model</a></li>
+<li><a href="#team">Team</a></li>
+<li><a href="#ask">The Ask</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="section hero">
+<div class="overline">Matchbox 7 &mdash; Investor Briefing &bull; April 2026</div>
+<h1>The GLP-1 Side-Effect<br><span class="gradient-text">Economy Is Unserved.</span><br>We Own the Solution.</h1>
+<p class="subtitle">Matchbox 7 is building the category-defining nutrition system for the 15M+ Americans on GLP-1 medications &mdash; solving the constipation, dehydration, muscle loss, and GI distress that no existing product addresses. Backed by proprietary water-soluble fiber technology with 3.3x higher gut bioavailability than standard supplements.</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="num" style="color:var(--accent)">15M+</div><div class="label">GLP-1 Users in the US</div></div>
+<div class="hero-stat"><div class="num" style="color:var(--accent2)">74%</div><div class="label">Experience GI Side Effects</div></div>
+<div class="hero-stat"><div class="num" style="color:var(--accent3)">$0</div><div class="label">Purpose-Built Solutions Today</div></div>
+<div class="hero-stat"><div class="num" style="color:var(--gold)">$450M</div><div class="label">Exit by Strategic Advisor's Prior Co.</div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROBLEM -->
+<section class="section" id="problem">
+<span class="tag tag-red">The Problem</span>
+<h2>GLP-1 Medications Create<br>a <span class="gradient-text">$4.8B Side-Effect Gap</span></h2>
+<p style="color:var(--muted);max-width:800px;margin-top:16px">Semaglutide (Ozempic/Wegovy) and tirzepatide (Mounjaro/Zepbound) have become the fastest-growing drug class in history. But 50&ndash;74% of users suffer debilitating GI side effects that compromise adherence and quality of life. No mainstream nutrition brand addresses this systematically.</p>
+
+<div class="problem-grid">
+<div>
+<div class="problem-stat-row">
+<div class="problem-stat"><div class="big">50%</div><div class="desc">Experience Nausea</div></div>
+<div class="problem-stat"><div class="big">24%</div><div class="desc">Suffer Constipation</div></div>
+</div>
+<div class="problem-stat-row">
+<div class="problem-stat"><div class="big">40-50%</div><div class="desc">Lean Mass Loss of Total Weight Lost</div></div>
+<div class="problem-stat"><div class="big">30%+</div><div class="desc">Discontinue Due to Side Effects</div></div>
+</div>
+</div>
+<div>
+<div class="card" style="margin-bottom:16px;border-color:var(--accent2)">
+<h3>The Four Unaddressed Problems</h3>
+<ul style="list-style:none;margin-top:12px">
+<li style="padding:8px 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent2)">1. Constipation</strong> &mdash; GLP-1 slows GI motility; fiber intake drops as appetite decreases</li>
+<li style="padding:8px 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent2)">2. Dehydration</strong> &mdash; Reduced fluid intake + nausea-driven avoidance = chronic electrolyte depletion</li>
+<li style="padding:8px 0;border-bottom:1px solid var(--border)"><strong style="color:var(--accent2)">3. Muscle Wasting</strong> &mdash; Up to 50% of weight lost is lean mass without adequate protein (1.2&ndash;2.0g/kg/day)</li>
+<li style="padding:8px 0"><strong style="color:var(--accent2)">4. Nutrient Malabsorption</strong> &mdash; Delayed gastric emptying reduces bioavailability of key nutrients</li>
+</ul>
+</div>
+<p style="font-size:0.85rem;color:var(--muted)"><strong style="color:var(--text)">Source:</strong> PMC/NIH systematic reviews of GLP-1 RA gastrointestinal tolerability (2022&ndash;2026); INGREDIENTES LATAM GLP-1 nutraceutical analysis (March 2026)</p>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MARKET CATALYSTS -->
+<section class="section">
+<span class="tag tag-gold">Timing</span>
+<h2>Three Irreversible <span class="gradient-text">Market Catalysts</span></h2>
+<p style="color:var(--muted);max-width:700px;margin-top:16px">The GLP-1 companion nutrition market is at an inflection point. These catalysts are structural, not cyclical.</p>
+
+<div class="catalyst-strip">
+<div class="catalyst">
+<div class="when">March 20, 2026</div>
+<h3>Semaglutide Patent Cliff</h3>
+<p>Primary semaglutide patent expired globally. 15+ Chinese generics in final-stage trials. India, Canada, Brazil, China (40% of world population) gain access. US protected until 2031, but global expansion drives 2&ndash;3x user growth.</p>
+</div>
+<div class="catalyst">
+<div class="when">2026 &mdash; Ongoing</div>
+<h3>Oral GLP-1 Pills Launch</h3>
+<p>Oral formulations eliminate injection barrier. Clinical data shows ~80% GI side-effect rates with oral delivery &mdash; even higher than injectables. Every new user is a potential customer.</p>
+</div>
+<div class="catalyst">
+<div class="when">January 2026</div>
+<h3>Medicare Part D Expansion</h3>
+<p>Medicare now covers obesity medications for 40M+ beneficiaries. Expands addressable market from commercially insured to the largest single health coverage program in the US.</p>
+</div>
+<div class="catalyst">
+<div class="when">Q1 2026</div>
+<h3>Gut Health = VC Priority</h3>
+<p>Gut health products secured 30% of food venture capital in Q1 2026. Investors are actively seeking brands with clinical validation in this exact category.</p>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SOLUTION -->
+<section class="section" id="solution">
+<span class="tag tag-green">The Solution</span>
+<h2>Three Products. <span class="gradient-text">One System.</span></h2>
+<p style="color:var(--muted);max-width:700px;margin-top:16px">Matchbox 7 is building the GLP-1 Companion Nutrition System &mdash; a modular product line that addresses all four side effects through clinically-informed formulations built on proprietary Monch water-soluble fiber technology.</p>
+
+<div class="product-showcase">
+<div class="product-card bar">
+<span class="tag tag-purple">Flagship</span>
+<h3>Monch Protein + Fiber Bar</h3>
+<p class="price">$3.49 DTC / $2.49 Wholesale</p>
+<p style="color:var(--muted);font-size:0.9rem">Indulgent chocolate brownie bar with candy-like taste. Developed by the Flavor Insights team (creators of Muscle Milk).</p>
+<ul>
+<li>15g protein (whey isolate + collagen + soy)</li>
+<li>8&ndash;10g proprietary Monch water-soluble fiber</li>
+<li>Integrated electrolytes (Na/K/Mg)</li>
+<li>&lt;3g sugar, 45g serving</li>
+<li>No artificial flavors or sweeteners</li>
+<li>Enrobed in BioLumen chocolate compound</li>
+<li>Also available without chocolate coating</li>
+</ul>
+</div>
+<div class="product-card packet">
+<span class="tag tag-green">Complement</span>
+<h3>Monch Electrolyte Packets</h3>
+<p class="price">$1.49 DTC / $0.99 Wholesale</p>
+<p style="color:var(--muted);font-size:0.9rem">Stackable wellness sachets with Monch fiber base for hydration + GI support between meals.</p>
+<ul>
+<li>Monch water-soluble fiber base</li>
+<li>Full electrolyte profile (Na/K/Mg)</li>
+<li>Mixes into any cold beverage</li>
+<li>Three blend options: Fiber, Enzyme, Electrolyte</li>
+<li>$1.10 COGS &mdash; ~78% DTC margin</li>
+<li>Existing product with proven demand</li>
+</ul>
+</div>
+<div class="product-card drink">
+<span class="tag tag-gold">In Development</span>
+<h3>Monch Functional Drink</h3>
+<p class="price">TBD</p>
+<p style="color:var(--muted);font-size:0.9rem">Ready-to-drink format leveraging Monch water solubility for maximum convenience. Phase 2 product.</p>
+<ul>
+<li>Water-soluble Monch fiber delivery</li>
+<li>Electrolyte-fortified</li>
+<li>Designed for on-the-go consumption</li>
+<li>Formulation in progress with Flavor Insights</li>
+<li>Launch timeline: Year 2</li>
+</ul>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SCIENCE -->
+<section class="section" id="science">
+<span class="tag tag-purple">The Science</span>
+<h2>Water-Soluble Monch Fiber:<br><span class="gradient-text">3.3x Higher Bioavailability</span></h2>
+<p style="color:var(--muted);max-width:800px;margin-top:16px">Monch is a proprietary water-soluble fiber that achieves approximately 40% absorption in the gut after ingestion &mdash; compared to ~12% for standard insoluble fiber supplements. This is possible because water-soluble fiber is readily fermented by colonic microbiota into short-chain fatty acids (SCFAs), which are absorbed at &gt;95% efficiency in the colon.</p>
+
+<div class="science-visual">
+<h3>Gut Absorption Comparison</h3>
+<p style="color:var(--muted);font-size:0.9rem;margin-bottom:24px">Percentage of functional compounds absorbed after ingestion</p>
+
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:8px">
+<span style="width:140px;font-size:0.9rem;font-weight:600;color:var(--accent3)">Monch (Soluble)</span>
+<div class="absorption-bar" style="flex:1"><div class="absorption-fill monch">40% Absorbed</div></div>
+</div>
+<div style="display:flex;align-items:center;gap:16px">
+<span style="width:140px;font-size:0.9rem;font-weight:500;color:var(--muted)">Standard Fiber</span>
+<div class="absorption-bar" style="flex:1"><div class="absorption-fill standard">~12%</div></div>
+</div>
+
+<div class="science-grid">
+<div class="card" style="margin-top:0">
+<div class="card-icon">🔬</div>
+<h3>Fermentation Pathway</h3>
+<p>Water-soluble fiber is readily fermented by gut microbiota into SCFAs (acetate, propionate, butyrate) at 300 mmol/day. Only 10 mmol/day excreted. &gt;95% of SCFAs absorbed in the colon. (Topping & Clifton, Physiological Reviews)</p>
+</div>
+<div class="card" style="margin-top:0">
+<div class="card-icon">💧</div>
+<h3>Water Solubility Advantage</h3>
+<p>Unlike insoluble fiber that passes through as bulk, Monch dissolves completely &mdash; enabling incorporation into bars, packets, and beverages while maintaining full bioactive potential. Gel-forming action slows gastric emptying, reducing GLP-1 nausea.</p>
+</div>
+<div class="card" style="margin-top:0">
+<div class="card-icon">🧬</div>
+<h3>Universal Incorporation</h3>
+<p>Water solubility means Monch can be incorporated into virtually any consumer food product &mdash; bars, drinks, powders, baked goods. This creates a B2B ingredient licensing opportunity beyond our own product line.</p>
+</div>
+</div>
+
+<p style="font-size:0.8rem;color:var(--muted);margin-top:24px"><strong>Sources:</strong> PMC/NIH &mdash; "Colonic health: fermentation and SCFAs" (Topping & Clifton); "SCFAs and Human Colonic Function" (Physiological Reviews 81:3, 2001); MDPI Molecules &mdash; "Soluble Dietary Fiber: Most Important Nutrient for Gut Microbiota" (2021); PMC &mdash; "Effects of Dietary Fiber on Metabolic Health" (2012)</p>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MARKET -->
+<section class="section" id="market">
+<span class="tag tag-purple">Market Opportunity</span>
+<h2>A <span class="gradient-text">$15.8B Protein Bar Market</span><br>With Zero GLP-1 Specialists</h2>
+
+<div class="market-sizes">
+<div class="market-circle">
+<div class="ring tam"><div class="ring-inner"><div class="ring-val" style="color:var(--accent)">$15.8B</div><div class="ring-label">TAM</div></div></div>
+<h3>Total Addressable</h3>
+<p style="color:var(--muted);font-size:0.85rem">US protein bar market ($10.7B) + US electrolyte supplement market ($5.1B). Growing at 7&ndash;10% CAGR.</p>
+</div>
+<div class="market-circle">
+<div class="ring sam"><div class="ring-inner"><div class="ring-val" style="color:var(--accent2)">$1.2B</div><div class="ring-label">SAM</div></div></div>
+<h3>Serviceable Available</h3>
+<p style="color:var(--muted);font-size:0.85rem">GLP-1 users seeking functional nutrition solutions (15M users &times; estimated $80/year spend on companion products).</p>
+</div>
+<div class="market-circle">
+<div class="ring som"><div class="ring-inner"><div class="ring-val" style="color:var(--accent3)">$4-8M</div><div class="ring-label">SOM Y2</div></div></div>
+<h3>Realistic Capture</h3>
+<p style="color:var(--muted);font-size:0.85rem">0.3&ndash;0.7% SAM penetration by end of Year 2 through DTC + specialty wholesale + practitioner channels.</p>
+</div>
+</div>
+
+<div class="card-grid" style="margin-top:32px">
+<div class="card">
+<div class="card-icon">📊</div>
+<h3>Protein Bar Segment</h3>
+<p>$10.7B in 2026, growing to $17.2B by 2031 at 9.9% CAGR. Premium functional bars ($3.50&ndash;$5.00) are the fastest-growing sub-segment. Multi-texture and clean-label bars dominate new launches.</p>
+</div>
+<div class="card">
+<div class="card-icon">⚡</div>
+<h3>Electrolyte Segment</h3>
+<p>US electrolyte supplement market at $648M in 2025, growing 8%+ annually. Sugar-free formulas demand up 31%. Powder/sachet format up 34% year-over-year. North America holds 41% global share.</p>
+</div>
+<div class="card">
+<div class="card-icon">💊</div>
+<h3>GLP-1 Drug Market</h3>
+<p>$58B in 2026, growing to $133B by 2035. 2.4M+ patients prescribed GLP-1 RAs through Sept 2025 (Truveta, 18% US sample). AOM prescribing rose 23.8% in Q1 2026 alone.</p>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPETITIVE MOAT -->
+<section class="section">
+<span class="tag tag-green">Defensibility</span>
+<h2>Five Layers of <span class="gradient-text">Competitive Moat</span></h2>
+
+<div class="moat-grid">
+<div class="moat-item">
+<div class="moat-num">1</div>
+<div><h3>Proprietary Ingredient IP</h3><p style="color:var(--muted);font-size:0.9rem">Monch water-soluble fiber (MM1/MM3) is manufactured exclusively by BioLumen. Exclusive license for the Americas (ex-Chile). No competitor can source or replicate without 2+ years of R&D.</p></div>
+</div>
+<div class="moat-item">
+<div class="moat-num">2</div>
+<div><h3>Muscle Milk Pedigree</h3><p style="color:var(--muted);font-size:0.9rem">Flavor Insights (Greg Pickett, Muscle Milk creator &mdash; $450M exit to Hormel) developed our flavor profiles. 111,000 sq ft facility in Benicia, CA. This team built the #1 protein brand in the US.</p></div>
+</div>
+<div class="moat-item">
+<div class="moat-num">3</div>
+<div><h3>Formulation Exclusivity</h3><p style="color:var(--muted);font-size:0.9rem">Only bar combining all five elements: premium chocolate, 15g+ protein, proprietary Monch fiber, integrated electrolytes, and clean sweetening. No competitor addresses this combination.</p></div>
+</div>
+<div class="moat-item">
+<div class="moat-num">4</div>
+<div><h3>Vertical Supply Chain</h3><p style="color:var(--muted);font-size:0.9rem">Exclusive license includes supply agreement &mdash; BioLumen is sole supplier. Existing factory produces 166K servings/month with capacity to scale. No middlemen, no commodity sourcing.</p></div>
+</div>
+<div class="moat-item">
+<div class="moat-num">5</div>
+<div><h3>First-Mover in GLP-1 Nutrition</h3><p style="color:var(--muted);font-size:0.9rem">While Nestl&eacute; and major CPG discuss "companion products" at conferences, we are shipping. First brand to market with a clinically-informed, multi-product GLP-1 companion system.</p></div>
+</div>
+<div class="moat-item">
+<div class="moat-num">6</div>
+<div><h3>B2B Ingredient Licensing</h3><p style="color:var(--muted);font-size:0.9rem">Water-soluble Monch can be incorporated into any consumer food product. Ingredient licensing to other brands creates high-margin, capital-light revenue beyond our own product line.</p></div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FINANCIAL MODEL -->
+<section class="section" id="model">
+<span class="tag tag-purple">Financial Model</span>
+<h2><span class="gradient-text">Unit Economics</span> &amp; Revenue Model</h2>
+
+<div class="unit-econ">
+<div class="unit-block">
+<h3 style="margin-bottom:16px">Protein + Fiber Bar</h3>
+<div class="unit-row"><span class="lbl">DTC Retail Price</span><span>$3.49/bar</span></div>
+<div class="unit-row"><span class="lbl">Wholesale Price (40% discount)</span><span>$2.09/bar</span></div>
+<div class="unit-row"><span class="lbl">COGS (at 25K run)</span><span>$1.59/bar</span></div>
+<div class="unit-row"><span class="lbl">COGS (at 100K run)</span><span>$1.35/bar</span></div>
+<div class="unit-row"><span class="lbl">Formulation Cost (first flavor)</span><span>$7,500</span></div>
+<div class="unit-row"><span class="lbl">Additional Flavors</span><span>$5,000/each</span></div>
+<div class="unit-row"><span class="lbl">DTC Gross Margin</span><span>54.4% (at $1.59)</span></div>
+<div class="unit-row"><span class="lbl">DTC Gross Margin (at scale)</span><span>61.3% (at $1.35)</span></div>
+<div class="unit-row"><span>Wholesale Gross Margin</span><span>24.0% &rarr; 35.4%</span></div>
+</div>
+<div class="unit-block">
+<h3 style="margin-bottom:16px">Electrolyte Packets</h3>
+<div class="unit-row"><span class="lbl">DTC Retail Price</span><span>$1.49/packet</span></div>
+<div class="unit-row"><span class="lbl">Wholesale Price</span><span>$0.89/packet</span></div>
+<div class="unit-row"><span class="lbl">COGS</span><span>$1.10/packet</span></div>
+<div class="unit-row"><span class="lbl">DTC Gross Margin</span><span>26.2%</span></div>
+<div class="unit-row"><span class="lbl">Bundle Margin Contribution</span><span>Drives bar attachment rate</span></div>
+<div class="unit-row"><span class="lbl">Monthly Subscription (30-day)</span><span>$44.70 (30 packets)</span></div>
+<div class="unit-row"><span class="lbl">Existing Factory Capacity</span><span>166,000 servings/month</span></div>
+<div class="unit-row"><span>Blended Bundle Margin</span><span>42&ndash;55% DTC</span></div>
+</div>
+</div>
+
+<!-- REVENUE SCENARIOS -->
+<h3 style="margin-top:48px;margin-bottom:8px">24-Month Revenue Scenarios</h3>
+<p style="color:var(--muted);font-size:0.9rem;margin-bottom:24px">Conservative assumes slower ramp with DTC-only for 6 months. Base case assumes wholesale entry at Month 5 and practitioner channel at Month 7.</p>
+
+<table class="scenario-table">
+<thead>
+<tr><th>Metric</th><th>Conservative (Y1)</th><th>Base Case (Y1)</th><th>Base Case (Y2)</th></tr>
+</thead>
+<tbody>
+<tr><td>Monthly Revenue (Month 6)</td><td>$35K</td><td>$65K</td><td>&mdash;</td></tr>
+<tr><td>Monthly Revenue (Month 12)</td><td>$95K</td><td>$175K</td><td>&mdash;</td></tr>
+<tr><td>Monthly Revenue (Month 18)</td><td>&mdash;</td><td>&mdash;</td><td>$280K</td></tr>
+<tr><td>Monthly Revenue (Month 24)</td><td>&mdash;</td><td>&mdash;</td><td>$420K</td></tr>
+<tr class="highlight-row"><td>Annual Revenue</td><td>$680K</td><td>$1.2M</td><td>$3.6M</td></tr>
+<tr><td>Gross Margin</td><td>48%</td><td>52%</td><td>57%</td></tr>
+<tr><td>DTC / Wholesale Mix</td><td>85/15</td><td>60/40</td><td>45/55</td></tr>
+<tr><td>Units Shipped</td><td>195K</td><td>380K</td><td>850K</td></tr>
+<tr><td>Wholesale Doors</td><td>0&ndash;25</td><td>50&ndash;100</td><td>200&ndash;500</td></tr>
+<tr class="highlight-row"><td>EBITDA Breakeven Month</td><td>Month 11</td><td>Month 8</td><td>Sustained</td></tr>
+<tr><td>CAC Target</td><td>$28</td><td>$22</td><td>$18</td></tr>
+<tr><td>LTV:CAC Ratio</td><td>3.2x</td><td>4.5x</td><td>6.0x</td></tr>
+</tbody>
+</table>
+
+<!-- MONTHLY REVENUE BARS -->
+<div class="revenue-chart">
+<h3>Monthly Revenue Trajectory &mdash; Base Case</h3>
+<div class="chart-legend">
+<span><span class="dot" style="background:var(--accent)"></span> Conservative</span>
+<span><span class="dot" style="background:var(--accent3)"></span> Base Case</span>
+</div>
+<div class="chart-bars">
+<div class="chart-bar-wrap"><div class="chart-bar conservative" style="height:3%"><div class="bar-val" style="color:var(--accent)">$5K</div></div><div class="chart-label">M1</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar conservative" style="height:5%"><div class="bar-val" style="color:var(--accent)">$8K</div></div><div class="chart-label">M2</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:9%"><div class="bar-val" style="color:var(--accent3)">$22K</div></div><div class="chart-label">M3</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:14%"><div class="bar-val" style="color:var(--accent3)">$38K</div></div><div class="chart-label">M4</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:20%"><div class="bar-val" style="color:var(--accent3)">$55K</div></div><div class="chart-label">M5</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:25%"><div class="bar-val" style="color:var(--accent3)">$65K</div></div><div class="chart-label">M6</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:32%"><div class="bar-val" style="color:var(--accent3)">$85K</div></div><div class="chart-label">M7</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:40%"><div class="bar-val" style="color:var(--accent3)">$105K</div></div><div class="chart-label">M8</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:48%"><div class="bar-val" style="color:var(--accent3)">$125K</div></div><div class="chart-label">M9</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:57%"><div class="bar-val" style="color:var(--accent3)">$148K</div></div><div class="chart-label">M10</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:65%"><div class="bar-val" style="color:var(--accent3)">$162K</div></div><div class="chart-label">M11</div></div>
+<div class="chart-bar-wrap"><div class="chart-bar base" style="height:75%"><div class="bar-val" style="color:var(--accent3)">$175K</div></div><div class="chart-label">M12</div></div>
+</div>
+</div>
+
+<!-- BREAK-EVEN ANALYSIS -->
+<h3 style="margin-top:48px">Break-Even Analysis</h3>
+<div class="breakeven-chart">
+<p style="color:var(--muted);font-size:0.9rem;margin-bottom:24px">Monthly fixed costs of ~$45K (2 FTE + overhead). Variable costs scale with revenue. Break-even at ~$85K monthly revenue (Base Case: Month 8).</p>
+<div class="be-row">
+<div class="be-label">M3</div>
+<div class="be-bar"><div class="be-fill" style="width:26%;background:var(--accent2)">$22K</div></div>
+<div class="be-val" style="color:var(--accent2)">-$23K</div>
+</div>
+<div class="be-row">
+<div class="be-label">M5</div>
+<div class="be-bar"><div class="be-fill" style="width:65%;background:var(--gold)">$55K</div></div>
+<div class="be-val" style="color:var(--gold)">-$8K</div>
+</div>
+<div class="be-row">
+<div class="be-label">M8</div>
+<div class="be-bar"><div class="be-fill" style="width:100%;background:var(--accent3)">$105K &mdash; BREAK-EVEN</div></div>
+<div class="be-val" style="color:var(--accent3)">+$7K</div>
+</div>
+<div class="be-row">
+<div class="be-label">M12</div>
+<div class="be-bar"><div class="be-fill" style="width:100%;background:var(--accent)">$175K</div></div>
+<div class="be-val" style="color:var(--accent)">+$42K</div>
+</div>
+<p style="font-size:0.85rem;color:var(--muted);margin-top:16px"><strong>Key assumptions:</strong> 2 FTE payroll ($18K/mo), office/insurance/legal ($8K/mo), Shopify/tools ($2K/mo), marketing ($12&ndash;20K/mo scaling), 3PL ($5K/mo at scale). COGS decreases from $1.59 to $1.45 at 50K+ runs.</p>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CAPACITY -->
+<section class="section">
+<span class="tag tag-green">Manufacturing</span>
+<h2>Production Capacity <span class="gradient-text">&amp; Supply Chain</span></h2>
+<p style="color:var(--muted);max-width:700px;margin-top:16px">Current China factory produces 166,000 individual Monch servings per month. Here's how that maps to our product lines and revenue targets.</p>
+
+<div class="unit-econ">
+<div class="capacity-calc">
+<h3 style="margin-bottom:16px">Current Capacity: 166K Servings/Month</h3>
+<div class="cap-row"><span class="lbl">If 100% Bars (1 serving each)</span><span>166,000 bars/month</span></div>
+<div class="cap-row"><span class="lbl">If 100% Packets (1 serving each)</span><span>166,000 packets/month</span></div>
+<div class="cap-row"><span class="lbl">Blended (60% bars / 40% packets)</span><span>99.6K bars + 66.4K packets</span></div>
+<div class="cap-row"><span class="lbl">Blended Monthly Revenue (DTC)</span><span>$347K bars + $99K packets = $446K</span></div>
+<div class="cap-row"><span class="lbl">Blended Annual Revenue (DTC)</span><span>$5.35M</span></div>
+<div class="cap-row"><span>Supports Year 1 &amp; Year 2 targets?</span><span>Yes &mdash; with headroom</span></div>
+</div>
+<div class="capacity-calc">
+<h3 style="margin-bottom:16px">Scale-Up Path</h3>
+<div class="cap-row"><span class="lbl">Year 1 Need (Base Case)</span><span>~32K servings/month avg</span></div>
+<div class="cap-row"><span class="lbl">Year 2 Need (Base Case)</span><span>~71K servings/month avg</span></div>
+<div class="cap-row"><span class="lbl">Current Capacity Utilization (Y1)</span><span>19%</span></div>
+<div class="cap-row"><span class="lbl">Current Capacity Utilization (Y2)</span><span>43%</span></div>
+<div class="cap-row"><span class="lbl">Second Factory Trigger Point</span><span>&gt;$3M ARR (~$250K/mo)</span></div>
+<div class="cap-row"><span class="lbl">US Co-Packer (Mr. Bill's) Status</span><span>Development agreement signed</span></div>
+<div class="cap-row"><span>Dual-Source Risk Mitigation</span><span>China + US co-packer active</span></div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GTM TIMELINE -->
+<section class="section">
+<span class="tag tag-purple">Go-To-Market</span>
+<h2>12-Month <span class="gradient-text">Execution Plan</span></h2>
+
+<div class="timeline">
+<div class="timeline-item active">
+<div class="time">Phase 1: Weeks 1&ndash;8 &bull; Foundation</div>
+<h3>Product Finalization &amp; Brand Build</h3>
+<p>Finalize bar formulation with Mr. Bill's Formula Fusion (chocolate brownie, first flavor). Complete taste testing (target: 4.0+/5.0 blind test, n=50+). Build Shopify DTC storefront with GLP-1 companion positioning. Onboard 3PL. Segment email list. First production run: 25K bars.</p>
+<p style="margin-top:8px;font-size:0.85rem"><strong style="color:var(--accent)">Budget: $62K&ndash;$77K</strong> &bull; Exit Gate: Bars produced + QC passed + store live</p>
+</div>
+<div class="timeline-item">
+<div class="time">Phase 2: Weeks 9&ndash;16 &bull; Soft Launch</div>
+<h3>DTC Launch &amp; Demand Validation</h3>
+<p>Launch GLP-1 Companion Bundle to segmented email list. Seed 20&ndash;30 influencers (GLP-1/wellness, tier-2/3). Test paid media ($2&ndash;4K/mo, Meta + TikTok). Launch Amazon FBA listing. Begin clinical study partnerships (glycemic response + GI symptom studies). Target: 200+ bundle orders by Week 16.</p>
+<p style="margin-top:8px;font-size:0.85rem"><strong style="color:var(--accent)">Budget: $41K&ndash;$65K</strong> &bull; Exit Gate: 200+ orders/mo + CAC &lt;$30 validated</p>
+</div>
+<div class="timeline-item">
+<div class="time">Phase 3: Months 5&ndash;8 &bull; Scale</div>
+<h3>Channel Expansion &amp; Growth</h3>
+<p>Engage specialty retail broker (Vitamin Shoppe, GNC, Whole Foods regional). Present to 10&ndash;15 buyers. Scale paid media to $8&ndash;14K/mo. Paid influencer wave (10&ndash;15 at $500&ndash;$2K/post). PR campaign leveraging preliminary clinical data. Begin practitioner channel outreach. Second production run: 50&ndash;75K bars.</p>
+<p style="margin-top:8px;font-size:0.85rem"><strong style="color:var(--accent)">Budget: $126K&ndash;$224K</strong> &bull; Exit Gate: 15&ndash;50 wholesale doors + EBITDA loss &lt;$10K/mo</p>
+</div>
+<div class="timeline-item">
+<div class="time">Phase 4: Months 9&ndash;12 &bull; Profitability</div>
+<h3>EBITDA Positive &amp; Expansion Prep</h3>
+<p>Cross EBITDA breakeven (Month 8&ndash;10). Begin conventional retail outreach (Kroger, Target, Costco &mdash; 3&ndash;6 month lead times). Publish clinical study results. Third production run: 100K+ bars at reduced COGS ($1.35&ndash;$1.45). Plan Year 2 SKU expansion (1&ndash;2 flavors). Optimize subscription model (target: &lt;12% monthly churn).</p>
+<p style="margin-top:8px;font-size:0.85rem"><strong style="color:var(--accent)">Budget: $150K&ndash;$167K</strong> &bull; Exit Gate: 3 consecutive months EBITDA positive + 50&ndash;100 doors</p>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TEAM -->
+<section class="section" id="team">
+<span class="tag tag-green">Team</span>
+<h2>Operators Who've <span class="gradient-text">Done This Before</span></h2>
+
+<div class="team-grid">
+<div class="team-card">
+<div class="team-avatar" style="background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff">JS</div>
+<h3>Joe Stein</h3>
+<div class="role">CEO &amp; Primary Manager</div>
+<p class="bio">Strategic leadership and investor relations. Driving the recapitalization and go-to-market execution for the Matchbox 7 product portfolio.</p>
+</div>
+<div class="team-card">
+<div class="team-avatar" style="background:linear-gradient(135deg,var(--accent3),var(--accent));color:#fff">JF</div>
+<h3>Justin Fowler</h3>
+<div class="role">COO &amp; Operations</div>
+<p class="bio">Managing day-to-day operations, supply chain, manufacturing relationships, and product development pipeline. Architect of the GTM strategy and financial model.</p>
+</div>
+<div class="team-card">
+<div class="team-avatar" style="background:linear-gradient(135deg,var(--gold),var(--accent2));color:#fff">GP</div>
+<h3>Greg Pickett</h3>
+<div class="role">Strategic Advisor</div>
+<p class="bio">Creator of Muscle Milk. Built CytoSport from zero to $200M revenue. $450M exit to Hormel Foods (2014). Now running Flavor Insights &mdash; our flavor development partner. 111K sq ft production facility.</p>
+</div>
+<div class="team-card">
+<div class="team-avatar" style="background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff">FI</div>
+<h3>Flavor Insights Team</h3>
+<div class="role">Formulation Partner</div>
+<p class="bio">The core team behind Muscle Milk's taste breakthrough. Developed Monch bar's candy-like chocolate brownie flavor profile. Nikki Brown &amp; Michael Pickett leading R&amp;D.</p>
+</div>
+<div class="team-card">
+<div class="team-avatar" style="background:linear-gradient(135deg,var(--accent),var(--accent3));color:#fff">BH</div>
+<h3>Bill Hilts</h3>
+<div class="role">Formulation &amp; Co-Pack</div>
+<p class="bio">Principal at Mr. Bill's Formula Fusion. Leading protein bar formulation development. Signed development agreement April 2026. Manufacturing-ready formulations with scale-up capability.</p>
+</div>
+<div class="team-card">
+<div class="team-avatar" style="background:linear-gradient(135deg,var(--muted),var(--accent));color:#fff">+2</div>
+<h3>Support Staff</h3>
+<div class="role">To Be Named</div>
+<p class="bio">1&ndash;2 additional team members to be hired in Phase 1&ndash;2 for marketing execution and fulfillment operations management.</p>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- USE OF FUNDS -->
+<section class="section" id="ask">
+<span class="tag tag-gold">The Ask</span>
+<h2>Capital Raise: <span class="gradient-text">$500K &ndash; $1M</span></h2>
+<p style="color:var(--muted);max-width:700px;margin-top:16px">Funds cover 12 months of operations from product finalization through EBITDA breakeven. At the low end, execution is lean with smaller production runs. At $750K+, all phases execute at full capacity with contingency buffer.</p>
+
+<div class="ask-section">
+<div class="ask-amount" style="color:var(--accent)">$750K</div>
+<p style="color:var(--muted);font-size:1.1rem;margin-bottom:32px">Recommended raise for full-capacity execution with 6-month extended runway</p>
+
+<div class="funds-visual">
+<div class="fund-bar">
+<div class="fund-seg" style="width:32%;background:var(--accent)">Production 32%</div>
+<div class="fund-seg" style="width:25%;background:var(--accent2)">Demand Gen 25%</div>
+<div class="fund-seg" style="width:18%;background:var(--accent3)">Operations 18%</div>
+<div class="fund-seg" style="width:15%;background:var(--gold)">Clinical 15%</div>
+<div class="fund-seg" style="width:10%;background:var(--muted)">Reserve 10%</div>
+</div>
+<div class="funds-detail">
+<div class="fund-item"><div class="fund-dot" style="background:var(--accent)"></div><div><div class="amt">$240K</div><div class="purpose">Three production runs (25K + 75K + 100K bars) + packaging + 3PL setup</div></div></div>
+<div class="fund-item"><div class="fund-dot" style="background:var(--accent2)"></div><div><div class="amt">$188K</div><div class="purpose">Paid media, influencer campaigns, PR, brand identity, Shopify, content</div></div></div>
+<div class="fund-item"><div class="fund-dot" style="background:var(--accent3)"></div><div><div class="amt">$135K</div><div class="purpose">Payroll (2 FTE &times; 12 months), legal, insurance, SaaS tools</div></div></div>
+<div class="fund-item"><div class="fund-dot" style="background:var(--gold)"></div><div><div class="amt">$112K</div><div class="purpose">Clinical studies (glycemic + GI), regulatory compliance, publication fees</div></div></div>
+<div class="fund-item"><div class="fund-dot" style="background:var(--muted)"></div><div><div class="amt">$75K</div><div class="purpose">Contingency reserve (10%) for slower-than-projected demand ramp</div></div></div>
+</div>
+</div>
+
+<div class="ask-terms" style="margin-top:48px">
+<div class="ask-term">
+<h4>Return Path: Strategic Acquisition</h4>
+<p>CPG companies actively acquiring in this space. Simply Good Foods acquired OWYN for $42.75M (Sept 2024). At $4M+ ARR with clinical data, Matchbox 7 becomes an acquisition target at 3&ndash;5x revenue = $12&ndash;$20M+ exit.</p>
+</div>
+<div class="ask-term">
+<h4>Return Path: Series A</h4>
+<p>VC benchmark for CPG Series A: $1&ndash;3M revenue + wholesale traction. Gut health brands secured 30% of food VC in Q1 2026. Year 2 trajectory of $3.6M revenue positions for $5&ndash;8M Series A at 15&ndash;20x forward revenue.</p>
+</div>
+<div class="ask-term">
+<h4>Return Path: Cash Flow</h4>
+<p>EBITDA-positive by Month 8&ndash;10. Year 2 projects 20&ndash;30% EBITDA margins at $3.6M revenue. If growth capital is not pursued, the business generates meaningful cash returns within 24 months.</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RISK REGISTER -->
+<section class="section">
+<span class="tag tag-red">Risks &amp; Mitigations</span>
+<h2>What Could Go Wrong &mdash;<br><span class="gradient-text">And How We Handle It</span></h2>
+<p style="color:var(--muted);max-width:700px;margin-top:16px">Transparent risk assessment builds investor confidence. Every risk has a pre-planned mitigation.</p>
+
+<table class="risk-table">
+<thead><tr><th>Risk</th><th>Probability</th><th>Impact</th><th>Mitigation</th></tr></thead>
+<tbody>
+<tr><td>Bar COGS exceeds $1.70</td><td><span class="risk-badge risk-med">30%</span></td><td><span class="risk-badge risk-high">High</span></td><td>Lock ingredient pricing pre-production. Volume tiers at 50K+. Simplify coating if needed. Mr. Bill's + China dual-source creates price competition.</td></tr>
+<tr><td>DTC demand below forecast</td><td><span class="risk-badge risk-med">30%</span></td><td><span class="risk-badge risk-high">High</span></td><td>Test 5+ creative angles before scaling spend. Fall back to performance athlete positioning if GLP-1 angle underperforms. Gate 2 at Week 16 prevents overspend.</td></tr>
+<tr><td>Chocolate quality / shelf stability</td><td><span class="risk-badge risk-med">20%</span></td><td><span class="risk-badge risk-high">High</span></td><td>Co-packer with chocolate expertise (Mr. Bill's). Require shelf-stability testing at 85&deg;F. Anti-bloom additives. Non-chocolate variant available as backup.</td></tr>
+<tr><td>Single-source supply risk (China)</td><td><span class="risk-badge risk-med">25%</span></td><td><span class="risk-badge risk-high">High</span></td><td>Mr. Bill's US co-packer signed as secondary source. BioLumen exclusive supply agreement provides contractual guarantee. 6-month inventory buffer target.</td></tr>
+<tr><td>Clinical results inconclusive</td><td><span class="risk-badge risk-med">20%</span></td><td><span class="risk-badge risk-med">Medium</span></td><td>Design studies conservatively. Use GI symptom survey (subjective) alongside CGM data (objective). Even modest improvements are publishable and marketable.</td></tr>
+<tr><td>Wholesale margin squeeze</td><td><span class="risk-badge risk-med">25%</span></td><td><span class="risk-badge risk-med">Medium</span></td><td>Wholesale is a customer acquisition channel first, margin channel second. Prioritize DTC. Only expand wholesale if COGS drops below $1.45 at scale.</td></tr>
+<tr><td>FDA regulatory scrutiny</td><td><span class="risk-badge risk-low">10%</span></td><td><span class="risk-badge risk-high">Critical</span></td><td>Regulatory consultant from Week 1. Avoid disease claims. Position as lifestyle/wellness. Structure/function claims only. Food classification, not supplement.</td></tr>
+<tr><td>Competitive entry by major CPG</td><td><span class="risk-badge risk-med">25%</span></td><td><span class="risk-badge risk-med">Medium</span></td><td>18&ndash;24 month head start. Proprietary ingredient IP (Monch is exclusively licensed). Clinical data creates defensible positioning. First-mover advantage in specialty/practitioner channels.</td></tr>
+</tbody>
+</table>
+</section>
+
+<div class="divider"></div>
+
+<!-- DECISION GATES -->
+<section class="section">
+<span class="tag tag-green">Governance</span>
+<h2>Investor <span class="gradient-text">Decision Gates</span></h2>
+<p style="color:var(--muted);max-width:700px;margin-top:16px">Three explicit go/no-go checkpoints where leadership and investors evaluate progress before committing further capital. This protects downside and ensures discipline.</p>
+
+<div class="card-grid">
+<div class="card" style="border-left:4px solid var(--accent)">
+<h3>Gate 1 &mdash; Week 8</h3>
+<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> Bar taste test passes 4.0+/5.0 AND first production run QC-approved AND Shopify store live.</p>
+<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Iterate formulation. Do not proceed to Phase 2 with subpar product. Capital preserved for re-attempt.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--gold)">
+<h3>Gate 2 &mdash; Week 16</h3>
+<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> 200+ DTC bundle orders/month AND CAC validated below $30 on at least one paid channel AND clinical studies enrolled.</p>
+<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Reduce paid spend. Double down on organic/influencer. Reassess positioning before scaling.</p>
+</div>
+<div class="card" style="border-left:4px solid var(--accent3)">
+<h3>Gate 3 &mdash; Month 8</h3>
+<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> Monthly EBITDA loss trending toward zero AND wholesale has 15+ active doors AND repeat purchase rate &gt;25%.</p>
+<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Cut non-essential OpEx. Pause wholesale expansion. Focus exclusively on DTC margin optimization.</p>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- KEY METRICS -->
+<section class="section">
+<span class="tag tag-purple">Success Metrics</span>
+<h2>What <span class="gradient-text">$2M+ Revenue</span> Looks Like</h2>
+<p style="color:var(--muted);max-width:700px;margin-top:16px">VC benchmark for CPG food brands: $1&ndash;3M revenue with a wholesale order proves product-market fit and investability. Our base case crosses $2M cumulative revenue in Month 16.</p>
+
+<div class="fin-grid">
+<div class="fin-card"><div class="val" style="color:var(--accent)">$1.2M</div><div class="label">Year 1 Revenue (Base)</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent3)">$3.6M</div><div class="label">Year 2 Revenue (Base)</div></div>
+<div class="fin-card"><div class="val" style="color:var(--gold)">52%&rarr;57%</div><div class="label">Gross Margin Trajectory</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent2)">Month 8</div><div class="label">EBITDA Breakeven</div></div>
+</div>
+
+<div class="fin-grid" style="margin-top:20px">
+<div class="fin-card"><div class="val" style="color:var(--accent)">380K</div><div class="label">Units Y1</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent3)">100+</div><div class="label">Wholesale Doors Y1</div></div>
+<div class="fin-card"><div class="val" style="color:var(--gold)">25%+</div><div class="label">Repeat Purchase Rate</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent2)">4.5x</div><div class="label">LTV:CAC Ratio</div></div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="logo" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.4rem;margin-bottom:16px">MATCHBOX<span style="color:var(--accent)">7</span></div>
+<p>Matchbox 7 &mdash; Building the GLP-1 Companion Nutrition Category</p>
+<p style="margin-top:8px">Joe Stein, CEO &bull; Justin Fowler, COO</p>
+<p class="conf">CONFIDENTIAL &mdash; For intended recipients only. April 2026.</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card, .product-card, .team-card, .fin-card, .moat-item, .catalyst').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
