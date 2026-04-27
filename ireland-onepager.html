@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Matchbox 7 — Project Monch · Ireland Engagement Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0f; --bg2:#111118; --bg3:#1a1a24;
+    --accent:#7c5cff; --accent2:#ff6b6b; --accent3:#4ecdc4;
+    --gold:#ffd700; --green:#169b62;
+    --text:#e8e8f0; --muted:#9090a8; --border:#2a2a3a; --card:#14141e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sans-serif;font-size:13px;line-height:1.45;-webkit-font-smoothing:antialiased}
+  .page{max-width:880px;margin:0 auto;padding:28px 36px 32px}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.01em;font-weight:600}
+  .gradient-text{background:linear-gradient(135deg,var(--accent) 0%,var(--accent3) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+
+  /* Header */
+  .header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:14px}
+  .wordmark{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.02em}
+  .wordmark .num{color:var(--accent)}
+  .header-meta{text-align:right;font-size:10.5px;color:var(--muted);line-height:1.5}
+  .header-meta strong{color:var(--text);font-weight:600}
+
+  /* Hero */
+  .hero{margin-bottom:14px}
+  .hero h1{font-size:24px;line-height:1.15;margin-bottom:6px}
+  .hero p.lede{color:var(--muted);font-size:13px;max-width:780px}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+  .stat .v{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--accent3);line-height:1}
+  .stat .l{font-size:10.5px;color:var(--muted);margin-top:4px;line-height:1.3}
+
+  /* Section */
+  section{margin-top:14px}
+  h2.section-title{font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px}
+  h3.headline{font-size:16px;margin-bottom:6px}
+
+  /* Two-col split */
+  .split{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:11px 13px}
+  .panel h3{font-size:13px;margin-bottom:5px}
+  .panel p,.panel li{font-size:11.5px;color:var(--text);line-height:1.5}
+  .panel li{margin-left:14px;margin-top:2px}
+  .panel .src{font-size:10px;color:var(--muted);margin-top:6px;font-style:italic}
+
+  /* Pillar grid */
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .pillar{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:10px}
+  .pillar .label{font-size:10px;color:var(--accent3);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px}
+  .pillar .h{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;margin-bottom:3px;line-height:1.25}
+  .pillar p{font-size:10.5px;color:var(--muted);line-height:1.4}
+
+  /* Catalysts */
+  .catalysts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .cat{background:var(--bg2);border-left:2px solid var(--accent);padding:8px 10px;border-radius:0 6px 6px 0}
+  .cat .when{font-size:9.5px;color:var(--accent2);text-transform:uppercase;letter-spacing:0.08em;font-weight:600}
+  .cat .title{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:600;margin:2px 0}
+  .cat p{font-size:10.5px;color:var(--muted);line-height:1.4}
+
+  /* Why Ireland */
+  .ireland-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .ireland-card{background:linear-gradient(135deg,rgba(124,92,255,0.08) 0%,rgba(78,205,196,0.04) 100%);border:1px solid var(--border);border-radius:8px;padding:11px 13px}
+  .ireland-card h4{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;margin-bottom:4px;color:var(--text)}
+  .ireland-card .pin{font-size:10px;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px}
+  .ireland-card p{font-size:10.5px;color:var(--muted);line-height:1.45}
+
+  /* Ask box */
+  .ask{background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);border:1px solid var(--accent);border-radius:10px;padding:14px 16px;margin-top:14px}
+  .ask h3{font-size:14px;margin-bottom:6px;color:var(--accent3)}
+  .ask-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:14px;margin-top:8px}
+  .ask-grid h4{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;font-weight:600}
+  .ask-grid ul{list-style:none}
+  .ask-grid li{font-size:11.5px;line-height:1.55;padding-left:14px;position:relative;margin-bottom:3px}
+  .ask-grid li::before{content:"→";color:var(--accent3);position:absolute;left:0;font-weight:600}
+  .placeholder{background:rgba(255,215,0,0.12);color:var(--gold);padding:0 4px;border-radius:3px;font-weight:600;font-size:10.5px}
+
+  /* Team strip */
+  .team-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .person{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:7px 10px;flex:1 1 calc(33% - 6px);min-width:200px}
+  .person .name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:11.5px;line-height:1.2}
+  .person .role{font-size:9.5px;color:var(--accent3);text-transform:uppercase;letter-spacing:0.08em;margin:2px 0}
+  .person .note{font-size:10px;color:var(--muted);line-height:1.4}
+
+  /* Footer */
+  footer{margin-top:14px;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--muted)}
+  footer .conf{color:var(--accent2);font-weight:600;text-transform:uppercase;letter-spacing:0.1em}
+
+  /* Print */
+  @media print {
+    @page { size: A4; margin: 12mm 14mm; }
+    html,body{background:#fff;color:#0a0a0f;font-size:9.5pt}
+    .page{padding:0;max-width:none}
+    .stat,.panel,.pillar,.cat,.ireland-card,.person,.ask{background:#fff;border-color:#1a1a24;color:#0a0a0f;break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .stat .v,.gradient-text,h2.section-title,.cat .when,.ireland-card .pin,.pillar .label,.person .role,.ask-grid h4,.ask h3{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .panel p,.pillar p,.cat p,.ireland-card p,.person .note,.hero p.lede,.stat .l{color:#3a3a4a}
+    .ask{background:#f7f7fb}
+    .cat{background:#f3f1fc}
+    .ireland-card{background:#f3fafa}
+    section{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div>
+      <div class="wordmark">MATCHBOX <span class="num">7</span></div>
+      <div style="font-size:10.5px;color:var(--muted);margin-top:2px">Project Monch · Ireland Engagement Brief</div>
+    </div>
+    <div class="header-meta">
+      Prepared for <strong><span class="placeholder">[IDA IRELAND / DEPT. OF ENTERPRISE — FILL]</span></strong><br>
+      Joe Stein, CEO · Justin Fowler, COO<br>
+      April 2026 · For intended recipients only
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>A European Manufacturing Base for the <span class="gradient-text">GLP-1 Companion Nutrition Category</span></h1>
+    <p class="lede">Matchbox 7 holds the exclusive Americas license for <strong>Monch</strong> — a proprietary water-soluble fiber with 3.3× the gut bioavailability of standard fiber, clinically aligned to the metabolic needs of the 15M+ Americans (and rapidly-growing global cohort) on GLP-1 medications. We are evaluating Ireland as the strategic European production and ingredient-licensing hub. This brief sets out the market scale, the science, the "why Ireland" rationale, and a partnership ask sized to a multi-decade category.</p>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="v">$58B → $133B</div><div class="l">Global GLP-1 drug market, 2026 → 2035 <em style="color:var(--muted);font-style:normal">(Evaluate Pharma / IQVIA)</em></div></div>
+      <div class="stat"><div class="v">$15.8B</div><div class="l">US protein bar + electrolyte TAM today, 7–10% CAGR</div></div>
+      <div class="stat"><div class="v">15M+</div><div class="l">Active US GLP-1 users; 74% suffer GI side effects no product solves</div></div>
+      <div class="stat"><div class="v">3.3×</div><div class="l">Monch fiber gut bioavailability vs. standard fiber (≈40% vs ≈12% absorbed)</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Why Now — Three Irreversible Catalysts</h2>
+    <div class="catalysts">
+      <div class="cat">
+        <div class="when">March 2026</div>
+        <div class="title">Semaglutide Patent Cliff</div>
+        <p>Primary patent expired globally. India, Canada, Brazil, China (40% of world population) gain generic access. EU follows shortly thereafter. Global GLP-1 user base projected to grow 2–3× — and every new user is a potential Monch customer.</p>
+      </div>
+      <div class="cat">
+        <div class="when">2026 — Ongoing</div>
+        <div class="title">Oral GLP-1 Pills Launch</div>
+        <p>Oral formulations remove the injection barrier. Clinical data shows ~80% GI side-effect rates with oral delivery — even higher than injectables. This expands the addressable patient pool dramatically.</p>
+      </div>
+      <div class="cat">
+        <div class="when">Q1 2026</div>
+        <div class="title">Gut Health = Capital Magnet</div>
+        <p>Gut-health products captured 30% of food venture capital in Q1 2026. The science of microbiome-mediated GLP-1 modulation — Monch's mechanism — is the most-funded sub-thesis in functional nutrition.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">The Dual Revenue Engine — Why a European Factory, Not Just a Brand</h2>
+    <div class="split">
+      <div class="panel">
+        <h3>Engine 1 · Branded Consumer Products</h3>
+        <p>Monch Protein + Fiber Bar (Y1 flagship), Monch Electrolyte Packet (Y1 attach companion), Monch Functional Drink (H1 Y2). Built with the team behind Muscle Milk. Base-case Y2 revenue: <strong>$3.6M</strong> with 57% gross margin. Strong, but on its own this consumes only ~43% of current production capacity.</p>
+        <p style="margin-top:6px"><strong style="color:var(--accent3)">The factory case is built on Engine 2.</strong></p>
+      </div>
+      <div class="panel" style="border-color:var(--accent3)">
+        <h3>Engine 2 · B2B Ingredient Licensing — The Scale Play</h3>
+        <p>Water-soluble Monch can be incorporated into <em>any</em> consumer food product — bars, drinks, baked goods, dairy. At a target production cost of <strong>$0.10/serving</strong> (vs. $0.37 today), Monch becomes credible to license to Cargill, Tate &amp; Lyle, ADM, IFF, and DSM-Firmenich at supplier price.</p>
+        <p style="margin-top:5px">Typical co-development deal shape: <strong>500 MT/yr minimum, 5–7 year category exclusivity</strong>. This is the channel that requires — and justifies — plant-scale European manufacturing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Why Ireland — Four Strategic Pillars</h2>
+    <div class="ireland-grid">
+      <div class="ireland-card">
+        <div class="pin">Science Cluster Alignment</div>
+        <h4>APC Microbiome Ireland (UCC, Cork)</h4>
+        <p>Monch's mechanism — water-soluble fiber → SCFA fermentation → microbiome modulation → endogenous GLP-1 production — sits squarely in APC's research domain. APC is one of the world's three most-cited microbiome centres. A formal R&amp;D partnership accelerates clinical validation and underpins KDB-qualifying IP development on Irish soil.</p>
+      </div>
+      <div class="ireland-card">
+        <div class="pin">Pharma Ecosystem Adjacency</div>
+        <h4>Companion to a Cluster That Already Exists</h4>
+        <p>Lilly (manufacturer of tirzepatide / Mounjaro / Zepbound), Pfizer, AbbVie, MSD, and Novo Nordisk-adjacent partners all manufacture in Ireland. A GLP-1 <em>companion</em> nutrition platform is the natural civilian-side bookend to that existing pharmaceutical-grade infrastructure — supply chain, regulatory, and talent pools transfer.</p>
+      </div>
+      <div class="ireland-card">
+        <div class="pin">Market Access</div>
+        <h4>EU Production Base, Post-Patent-Cliff</h4>
+        <p>The semaglutide patent cliff opens EU markets to generic GLP-1 drugs and a massive new patient cohort needing companion products. An Irish facility serves the EU, UK, Middle East, and Africa from inside the single market — and dual-sources us against current China-sole supply concentration.</p>
+      </div>
+      <div class="ireland-card">
+        <div class="pin">Fiscal &amp; Capital Fit</div>
+        <h4>KDB + R&amp;D Credit + IDA Capital Grants</h4>
+        <p>The <strong>Knowledge Development Box (6.25%)</strong> on qualifying IP-derived income is purpose-built for the Engine-2 ingredient-licensing royalty stream. Combined with the <strong>25% R&amp;D Tax Credit</strong>, <strong>12.5% corporation tax</strong>, and IDA capital/training grants, Ireland is the most fiscally efficient EU jurisdiction for an IP-heavy ingredient business.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Five Layers of Defensibility</h2>
+    <div class="pillars">
+      <div class="pillar"><div class="label">IP</div><div class="h">Exclusive Monch License</div><p>Americas (ex-Chile) territory; expansion to EMEA contemplated as part of this engagement. Sole-supply contractual guarantee from BioLumen.</p></div>
+      <div class="pillar"><div class="label">Pedigree</div><div class="h">Muscle Milk Team</div><p>Greg Pickett (Muscle Milk founder, $450M Hormel exit) develops our flavor profiles via Flavor Insights — 111K sq ft facility, Benicia CA.</p></div>
+      <div class="pillar"><div class="label">Formulation</div><div class="h">Only Bar in Class</div><p>Premium chocolate + 15g protein + proprietary fiber + integrated electrolytes + clean sweetening. No competitor combines all five.</p></div>
+      <div class="pillar"><div class="label">Timing</div><div class="h">First-Mover</div><p>While Nestlé and major CPG <em>discuss</em> companion products at conferences, we are shipping. 18–24 month head start on category creation.</p></div>
+    </div>
+  </section>
+
+  <section class="ask">
+    <h3>Project Monch — The Partnership Ask</h3>
+    <p style="font-size:11.5px;color:var(--muted);line-height:1.5">A purpose-built Irish facility producing <strong style="color:var(--text)">500–1,500 MT/yr of water-soluble Monch fiber</strong> with co-located bar, packet, and powder finishing capability. Sized to anchor Engine-2 ingredient-licensing supply contracts and serve EU/EMEA branded demand from a single base.</p>
+
+    <div class="ask-grid">
+      <div>
+        <h4>What Ireland Gains</h4>
+        <ul>
+          <li><strong>Capital deployment:</strong> <span class="placeholder">[€XX–XX M total project FILL]</span> facility CapEx + working capital.</li>
+          <li><strong>Direct employment:</strong> <span class="placeholder">[60–120 FTE FILL]</span> in food science, process engineering, QC, supply chain, commercial — plus indirect jobs in packaging, logistics, R&amp;D.</li>
+          <li><strong>Export intensity:</strong> Functional ingredient + branded SKUs exported to US, EU, UK, MENA. KDB-qualifying ingredient royalties booked in Ireland.</li>
+          <li><strong>Cluster reinforcement:</strong> Establishes Ireland as the European centre for the GLP-1 companion nutrition category — a brand-new, fast-growing sub-sector with no existing geographic anchor.</li>
+          <li><strong>R&amp;D anchoring:</strong> Multi-year funded research programme with APC Microbiome Ireland and Teagasc Moorepark; clinical work with Irish-led publications.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>What We Are Asking For</h4>
+        <ul>
+          <li><strong>IDA Ireland capital grant package</strong> sized to the agreed CapEx and FTE commitments under the standard IDA framework.</li>
+          <li><strong>Site selection &amp; expedited planning</strong> support — preferred locations under evaluation in <span class="placeholder">[Cork / Limerick / Galway — FILL]</span>.</li>
+          <li><strong>R&amp;D collaboration</strong> letter of intent with APC Microbiome Ireland (UCC) and Teagasc; Disruptive Technologies Innovation Fund eligibility review.</li>
+          <li><strong>Knowledge Development Box</strong> qualifying-asset structuring guidance for the Monch ingredient IP held in the Irish entity.</li>
+          <li><strong>Workforce development partnership</strong> via Skillnet Ireland / Springboard for food-science and process-engineering roles.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Team &amp; Strategic Partners</h2>
+    <div class="team-strip">
+      <div class="person"><div class="name">Joe Stein</div><div class="role">CEO · Strategic Leadership</div><div class="note">Recapitalisation lead; investor and government relations.</div></div>
+      <div class="person"><div class="name">Justin Fowler</div><div class="role">COO · Operations &amp; Strategy</div><div class="note">Supply chain, manufacturing partnerships, GTM architecture, financial model.</div></div>
+      <div class="person"><div class="name">Greg Pickett</div><div class="role">Strategic Advisor</div><div class="note">Muscle Milk founder; CytoSport $0→$200M; $450M Hormel exit (2014). Now Flavor Insights.</div></div>
+      <div class="person"><div class="name">Flavor Insights</div><div class="role">Formulation Partner</div><div class="note">Nikki Brown &amp; Michael Pickett — taste team behind the Muscle Milk breakthrough.</div></div>
+      <div class="person"><div class="name">Bill Hilts (Mr. Bill's)</div><div class="role">US Co-Pack &amp; Formulation</div><div class="note">Development agreement signed April 2026. US dual-source for branded SKUs.</div></div>
+      <div class="person"><div class="name">BioLumen</div><div class="role">Exclusive Ingredient Supplier</div><div class="note">Sole producer of Monch fiber; exclusive Americas licence to Matchbox 7; EMEA territory under negotiation.</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      Joe Stein · <span class="placeholder">[joe@matchbox7 — FILL]</span> &nbsp;·&nbsp;
+      Justin Fowler · <span class="placeholder">[justin@matchbox7 — FILL]</span><br>
+      Source-of-truth pitch &amp; live financial model: matchbox7-pitch.github.io · monchmonch-calc.vercel.app
+    </div>
+    <div class="conf">Confidential</div>
+  </footer>
+
+</div>
+</body>
+</html>
