@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Matchbox 7 — One-Page Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf8f3;
+    --paper2:#f4f1e9;
+    --ink:#0a0a0f;
+    --ink2:#3a3a44;
+    --ink3:#6b6b78;
+    --rule:#d8d4ca;
+    --rule2:#e8e3d6;
+    --accent:#5b3fd9;
+    --accent2:#0c8a82;
+    --gold:#a37800;
+    --green:#0f6b3f;
+    --coral:#c44545;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#ddd;color:var(--ink);font-family:'Inter',-apple-system,sans-serif;-webkit-font-smoothing:antialiased;font-size:10pt;line-height:1.4}
+  .sheet{background:var(--paper);width:8.5in;height:11in;margin:14px auto;padding:0.4in 0.5in;box-shadow:0 4px 16px rgba(0,0,0,0.18);position:relative;overflow:hidden}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.005em;font-weight:600;color:var(--ink)}
+
+  /* Page header */
+  .pgheader{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:5pt;border-bottom:0.5pt solid var(--ink);margin-bottom:8pt}
+  .wm{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12pt;letter-spacing:0.02em;color:var(--ink)}
+  .wm .n{color:var(--accent)}
+  .pgmeta{font-size:7.5pt;color:var(--ink3);text-align:right;line-height:1.4}
+  .pgmeta strong{color:var(--ink);font-weight:600}
+
+  /* Hero */
+  .hero{margin-bottom:8pt}
+  .hero h1{font-size:18pt;line-height:1.06;font-weight:700;letter-spacing:-0.018em;margin-bottom:5pt}
+  .hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .lede{color:var(--ink2);font-size:9.2pt;line-height:1.45;margin-bottom:7pt}
+  .lede strong{color:var(--ink);font-weight:600}
+
+  /* Stat band */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:4pt;margin-bottom:8pt}
+  .stat{padding:5pt 7pt;border:0.5pt solid var(--rule);background:#fff;border-radius:2pt}
+  .stat .v{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11.5pt;color:var(--accent2);line-height:1.05;letter-spacing:-0.01em}
+  .stat .l{font-size:6.8pt;color:var(--ink3);margin-top:2pt;line-height:1.3}
+
+  /* Section labels */
+  .seclbl{font-size:7pt;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.16em;margin-bottom:3pt;padding-bottom:1.5pt;border-bottom:0.5pt solid var(--rule)}
+  .seclbl.teal{color:var(--accent2)}
+  .seclbl.gold{color:var(--gold)}
+  .seclbl.green{color:var(--green)}
+  .seclbl.coral{color:var(--coral)}
+
+  /* The Market — 3-panel */
+  .market3{display:grid;grid-template-columns:0.95fr 1.1fr 0.95fr;gap:5pt;margin-bottom:8pt}
+  .mp{padding:5pt 7pt;border:0.5pt solid var(--rule);background:#fff;border-radius:2pt}
+  .mp.gap{border-left:1.5pt solid var(--coral)}
+  .mp.cat{border-left:1.5pt solid var(--accent)}
+  .mp.size{border-left:1.5pt solid var(--accent2);background:linear-gradient(180deg,#fff 0%,#f4faf9 100%)}
+  .mp h4{font-size:9pt;font-weight:600;margin-bottom:2pt;line-height:1.2}
+  .mp p{font-size:7.6pt;color:var(--ink2);line-height:1.42;margin-bottom:2pt}
+  .mp p strong{color:var(--ink);font-weight:600}
+  .mp ul{list-style:none;margin-top:1pt}
+  .mp li{font-size:7.5pt;color:var(--ink2);line-height:1.35;padding-left:8pt;position:relative;margin-bottom:1pt}
+  .mp li::before{content:"·";color:var(--ink3);position:absolute;left:2pt;font-weight:700;font-size:9pt;line-height:1}
+  .mp .row{display:flex;justify-content:space-between;align-items:baseline;margin-top:2pt;padding-top:2pt;border-top:0.5pt dashed var(--rule)}
+  .mp .row .k{font-size:7pt;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em;font-weight:600}
+  .mp .row .v{font-family:'Space Grotesk',sans-serif;font-size:9pt;color:var(--accent2);font-weight:700}
+
+  /* The Products — 3 product cards */
+  .products{display:grid;grid-template-columns:repeat(3,1fr);gap:5pt;margin-bottom:8pt}
+  .pcard{padding:6pt 8pt;border:0.5pt solid var(--rule);background:#fff;border-radius:2pt;position:relative}
+  .pcard.flagship{border-color:var(--accent2);border-width:0.75pt;background:linear-gradient(180deg,#fff 0%,#f4faf9 100%)}
+  .pcard .stage{font-size:6.5pt;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.13em;margin-bottom:1pt}
+  .pcard.flagship .stage{color:var(--accent2)}
+  .pcard h3{font-family:'Space Grotesk',sans-serif;font-size:10.5pt;font-weight:600;line-height:1.15;margin-bottom:1pt}
+  .pcard .price{font-size:7.5pt;color:var(--ink3);margin-bottom:3pt;font-weight:500}
+  .pcard .price strong{color:var(--ink);font-weight:600}
+  .pcard .role{font-size:7.5pt;color:var(--ink2);line-height:1.4;margin-bottom:3pt;font-style:italic}
+  .pcard ul{list-style:none}
+  .pcard li{font-size:7.5pt;color:var(--ink2);line-height:1.4;padding-left:9pt;position:relative;margin-bottom:1pt}
+  .pcard li::before{content:"›";color:var(--accent2);position:absolute;left:0;font-weight:700;font-size:8.5pt;top:-0.5pt}
+  .pcard.flagship li::before{color:var(--accent2)}
+
+  /* Defensibility row */
+  .why{display:grid;grid-template-columns:repeat(5,1fr);gap:4pt;margin-bottom:8pt}
+  .pl{padding:5pt 7pt;border:0.5pt solid var(--rule);background:#fff;border-radius:2pt}
+  .pl .lbl{font-size:6pt;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1pt}
+  .pl h4{font-family:'Space Grotesk',sans-serif;font-size:8.4pt;font-weight:600;margin-bottom:2pt;line-height:1.18}
+  .pl p{font-size:7.2pt;color:var(--ink3);line-height:1.38}
+
+  /* The Science — slim band */
+  .sci{padding:6pt 9pt;background:linear-gradient(135deg,#f7f3ff 0%,#f0fbfa 100%);border:0.5pt solid var(--rule);border-radius:2pt;margin-bottom:8pt;display:grid;grid-template-columns:1fr 1.4fr;gap:10pt;align-items:center}
+  .sci .pin{font-size:7pt;color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:0.13em;margin-bottom:1pt}
+  .sci h4{font-family:'Space Grotesk',sans-serif;font-size:10pt;font-weight:600;line-height:1.15;margin-bottom:2pt}
+  .sci p{font-size:7.8pt;color:var(--ink2);line-height:1.45}
+  .sci p strong{color:var(--ink);font-weight:600}
+
+  /* Footer */
+  .pgfooter{position:absolute;bottom:7mm;left:13mm;right:13mm;display:flex;justify-content:space-between;align-items:center;font-size:7pt;color:var(--ink3);padding-top:3pt;border-top:0.5pt solid var(--rule)}
+  .pgfooter .conf{color:#9c2222;font-weight:700;text-transform:uppercase;letter-spacing:0.14em}
+  .pgfooter .team{font-size:7pt}
+  .pgfooter .team strong{color:var(--ink);font-weight:600}
+
+  /* Print */
+  @media print {
+    @page { size: letter; margin: 0; }
+    html,body{background:var(--paper)}
+    .sheet{box-shadow:none;margin:0;width:8.5in;height:11in;padding:0.4in 0.5in;page-break-after:always;break-after:page;overflow:hidden}
+    .sheet:last-child{page-break-after:auto;break-after:auto}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="pgheader">
+    <div>
+      <div class="wm">MATCHBOX <span class="n">7</span></div>
+      <div style="font-size:7.5pt;color:var(--ink3);margin-top:1.5pt">One-Page Brief · Products &amp; Market</div>
+    </div>
+    <div class="pgmeta">
+      Joe Stein, CEO &middot; Justin Fowler, COO<br>
+      April 2026<br>
+      matchbox7-pitch.github.io
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Building the Nutrition System for the <em>GLP-1 Generation</em></h1>
+    <p class="lede">Matchbox 7 is creating the first product line designed end-to-end for the 15M+ Americans &mdash; and rapidly growing global cohort &mdash; on GLP-1 medications (Ozempic, Wegovy, Mounjaro, Zepbound). Our products solve the constipation, dehydration, muscle loss, and GI distress that no mainstream nutrition brand addresses. Built on <strong>Monch</strong>, a proprietary water-soluble fibre with 3.3&times; the gut bioavailability of standard fibre, exclusively licensed for the Americas.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="v">$15.8B</div><div class="l">US protein bar + electrolyte TAM today, growing 7&ndash;10% CAGR</div></div>
+      <div class="stat"><div class="v">$58B&rarr;$133B</div><div class="l">Global GLP-1 drug market, 2026 &rarr; 2035 (Evaluate Pharma / IQVIA)</div></div>
+      <div class="stat"><div class="v">15M+</div><div class="l">Active US GLP-1 users; 74% suffer GI side effects no product solves</div></div>
+      <div class="stat"><div class="v">$0</div><div class="l">Purpose-built solutions for GLP-1 side effects on the market today</div></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="seclbl">The Market &mdash; The Side-Effect Economy Is Unserved</div>
+    <div class="market3">
+      <div class="mp gap">
+        <h4>The Unsolved Gap</h4>
+        <p style="font-size:7.5pt">GLP-1 drugs work &mdash; but 50&ndash;74% of users suffer side effects severe enough that 30%+ discontinue. No mainstream brand systematically addresses:</p>
+        <ul>
+          <li><strong>Constipation</strong> &mdash; slowed GI motility</li>
+          <li><strong>Dehydration</strong> &mdash; reduced fluid intake</li>
+          <li><strong>Muscle wasting</strong> &mdash; up to 50% of weight lost is lean mass</li>
+          <li><strong>Nutrient malabsorption</strong> &mdash; delayed gastric emptying</li>
+        </ul>
+      </div>
+      <div class="mp cat">
+        <h4>Why Now &mdash; Four Catalysts</h4>
+        <p style="font-size:7.5pt">The GLP-1 companion category is at an inflection point. These forces are structural, not cyclical:</p>
+        <ul>
+          <li><strong>Mar 2026:</strong> Semaglutide patent cliff &mdash; global generics open India, Brazil, China, Canada (40% of world)</li>
+          <li><strong>2026+:</strong> Oral GLP-1 pills launching &mdash; ~80% GI side-effect rate, even higher than injectables</li>
+          <li><strong>Jan 2026:</strong> Medicare Part D adds obesity drugs &mdash; 40M+ new beneficiaries</li>
+          <li><strong>Q1 2026:</strong> Gut-health captured 30% of food VC</li>
+        </ul>
+      </div>
+      <div class="mp size">
+        <h4>Where We Play</h4>
+        <p style="font-size:7.5pt">Two of the fastest-growing categories in functional nutrition, with zero GLP-1 specialists today:</p>
+        <ul>
+          <li>US protein bar market: <strong>$10.7B</strong> (2026), 9.9% CAGR &mdash; premium functional bars are the fastest sub-segment</li>
+          <li>US electrolyte supplements: <strong>$5.1B</strong>, 8%+ growth, sugar-free up 31% YoY</li>
+          <li>B2B fibre ingredient: water-soluble Monch can be incorporated into any food product</li>
+        </ul>
+        <div class="row"><span class="k">SAM (GLP-1 cohort)</span><span class="v">$1.2B</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="seclbl teal">The Products &mdash; A Bundled System, Not Standalone SKUs</div>
+    <div class="products">
+      <div class="pcard flagship">
+        <div class="stage">Year 1 Flagship</div>
+        <h3>Monch Protein + Fibre Bar</h3>
+        <div class="price"><strong>$3.49</strong> DTC &middot; <strong>$2.49</strong> wholesale &middot; 45g serving</div>
+        <div class="role">Indulgent chocolate-brownie bar with candy-like taste, developed by the team that built Muscle Milk.</div>
+        <ul>
+          <li>15g protein (whey isolate + collagen + soy)</li>
+          <li>8&ndash;10g proprietary Monch water-soluble fibre</li>
+          <li>Integrated electrolytes (Na / K / Mg)</li>
+          <li>&lt;3g sugar; no artificial flavours or sweeteners</li>
+          <li>Enrobed in BioLumen chocolate compound (uncoated SKU also available)</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <div class="stage">Year 1 Companion</div>
+        <h3>Monch Electrolyte Packet</h3>
+        <div class="price"><strong>$1.49</strong> DTC &middot; <strong>$0.99</strong> wholesale</div>
+        <div class="role">Bundled with the bar or drink to solve dehydration + GI distress &mdash; the #2 GLP-1 side effect. Attach-rate driver, not a standalone margin SKU.</div>
+        <ul>
+          <li>Monch water-soluble fibre base</li>
+          <li>Full electrolyte profile (Na / K / Mg)</li>
+          <li>Mixes into any cold beverage</li>
+          <li>Three blend options: Fibre, Enzyme, Electrolyte</li>
+          <li>Existing product &mdash; proven manufacturing</li>
+        </ul>
+      </div>
+      <div class="pcard">
+        <div class="stage">H1 Year 2</div>
+        <h3>Monch Functional Drink</h3>
+        <div class="price">RTD format &middot; pricing TBD</div>
+        <div class="role">Ready-to-drink format leveraging Monch's water solubility for maximum convenience and ~5&times; stronger unit economics than the bar.</div>
+        <ul>
+          <li>Water-soluble Monch fibre delivery</li>
+          <li>Electrolyte-fortified</li>
+          <li>Designed for on-the-go consumption</li>
+          <li>Formulation in progress with Flavor Insights</li>
+          <li>Margin-expansion SKU for Year 2 scale-up</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sci">
+    <div>
+      <div class="pin">The Science Underneath</div>
+      <h4>Water-Soluble Monch Fibre</h4>
+    </div>
+    <div>
+      <p>Monch is a proprietary water-soluble fibre that achieves <strong>~40% gut absorption</strong> vs. ~12% for standard insoluble fibre. It is fermented by colonic microbiota into short-chain fatty acids (acetate, propionate, butyrate) at &gt;95% efficiency, modulating the microbiome and stimulating endogenous GLP-1 production. Its solubility makes it <strong>universally incorporable</strong> into bars, drinks, powders, and baked goods &mdash; opening a B2B ingredient-licensing channel beyond our own product line.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="seclbl gold">Why Us &mdash; Five Layers of Defensibility</div>
+    <div class="why">
+      <div class="pl">
+        <div class="lbl">IP</div>
+        <h4>Exclusive Monch Licence</h4>
+        <p>Sole-supply contractual guarantee from BioLumen. No competitor can source or replicate without 2+ years of R&amp;D.</p>
+      </div>
+      <div class="pl">
+        <div class="lbl">Pedigree</div>
+        <h4>Muscle Milk Team</h4>
+        <p>Greg Pickett (Muscle Milk founder, $450M Hormel exit) develops our flavour profiles via Flavor Insights.</p>
+      </div>
+      <div class="pl">
+        <div class="lbl">Formulation</div>
+        <h4>Only Bar in Class</h4>
+        <p>Premium chocolate + 15g protein + proprietary fibre + integrated electrolytes + clean sweetening &mdash; in one SKU.</p>
+      </div>
+      <div class="pl">
+        <div class="lbl">Timing</div>
+        <h4>First-Mover</h4>
+        <p>While Nestlé and major CPG <em>discuss</em> companion products at conferences, we are shipping. 18&ndash;24 month head start.</p>
+      </div>
+      <div class="pl">
+        <div class="lbl">Channel</div>
+        <h4>B2B Ingredient Upside</h4>
+        <p>Water-soluble Monch licensable to other brands &mdash; high-margin, capital-light revenue beyond our own line.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pgfooter">
+    <div class="team"><strong>Joe Stein</strong>, CEO &middot; <strong>Justin Fowler</strong>, COO &middot; with Flavor Insights, Mr. Bill's Formula Fusion, BioLumen</div>
+    <div class="conf">Confidential</div>
+  </div>
+
+</div>
+
+</body>
+</html>
