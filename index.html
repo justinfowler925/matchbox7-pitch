@@ -205,6 +205,59 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 .scenario-table td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:0.9rem}
 .scenario-table tr:nth-child(even){background:rgba(255,255,255,0.01)}
 .highlight-row{background:rgba(124,92,255,0.05) !important;font-weight:600}
+
+/* TRANSPARENCY / BUILD IN PUBLIC */
+.transparency-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+@media(max-width:900px){.transparency-grid{grid-template-columns:1fr}}
+.tpanel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;display:flex;flex-direction:column;min-height:540px}
+.tpanel.private{background:linear-gradient(180deg,var(--card) 0%,rgba(124,92,255,0.04) 100%);border-color:rgba(124,92,255,0.25)}
+.tpanel-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border)}
+.tpanel-title{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.95rem;letter-spacing:0.05em;text-transform:uppercase}
+.tpanel-title .access{font-size:0.65rem;letter-spacing:0.1em;padding:3px 8px;border-radius:4px;font-weight:700;background:rgba(78,205,196,0.15);color:var(--accent3);border:1px solid rgba(78,205,196,0.3)}
+.tpanel.private .tpanel-title .access{background:rgba(124,92,255,0.15);color:var(--accent);border-color:rgba(124,92,255,0.3)}
+.tpanel-meta{font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px rgba(74,222,128,0.7);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+
+/* Public feed */
+.feed-list{display:flex;flex-direction:column;gap:14px;flex:1}
+.feed-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px}
+.feed-item-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:0.7rem;color:var(--muted)}
+.feed-author{display:flex;align-items:center;gap:6px;font-weight:600;color:var(--accent3);text-transform:uppercase;letter-spacing:0.06em}
+.feed-author .badge{font-size:0.6rem;padding:1px 6px;border-radius:3px;background:rgba(78,205,196,0.15);color:var(--accent3);font-weight:700}
+.feed-author .badge.market{background:rgba(255,215,0,0.15);color:var(--gold)}
+.feed-author .badge.ops{background:rgba(255,107,107,0.15);color:var(--accent2)}
+.feed-body{font-size:0.85rem;line-height:1.55;color:var(--text)}
+.feed-body em{color:var(--muted);font-style:normal}
+
+/* Dashboard mockup */
+.dash-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+.kpi{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px}
+.kpi-label{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:4px}
+.kpi-val{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-0.01em;line-height:1}
+.kpi-delta{font-size:0.7rem;margin-top:4px;display:flex;align-items:center;gap:4px}
+.kpi-delta.ok{color:#4ade80}
+.kpi-delta.warn{color:var(--gold)}
+.kpi-delta.flat{color:var(--muted)}
+.dash-progress{margin-bottom:14px}
+.dash-progress-row{margin-bottom:10px}
+.dash-progress-row:last-child{margin-bottom:0}
+.dash-progress-meta{display:flex;justify-content:space-between;font-size:0.72rem;margin-bottom:5px}
+.dash-progress-meta .lbl{color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600}
+.dash-progress-meta .val{color:var(--text);font-family:'Space Grotesk',sans-serif;font-weight:600}
+.dash-bar{height:6px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.dash-bar .fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent) 0%,var(--accent3) 100%)}
+.dash-bar .fill.warn{background:linear-gradient(90deg,var(--gold) 0%,var(--accent2) 100%)}
+.dash-section-lbl{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin:14px 0 8px;padding-top:14px;border-top:1px solid var(--border)}
+.dash-commentary{background:var(--bg2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:12px 14px;font-size:0.82rem;line-height:1.55;color:var(--text)}
+.dash-commentary .who{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:5px}
+
+/* Commitments */
+.commit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+.commit-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px}
+.commit-card .icon{font-size:1.4rem;margin-bottom:8px}
+.commit-card h4{font-family:'Space Grotesk',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:6px}
+.commit-card p{font-size:0.82rem;color:var(--muted);line-height:1.5}
 </style>
 </head>
 <body>
@@ -221,6 +274,7 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 <li><a href="#model">Model</a></li>
 <li><a href="#team">Team</a></li>
 <li><a href="#ask">The Ask</a></li>
+<li><a href="#transparency">Transparency</a></li>
 <li><a href="#onepager" style="color:var(--accent3)">One-Pager &darr;</a></li>
 </ul>
 </div>
@@ -856,6 +910,134 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 <p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Cut non-essential OpEx. Pause wholesale expansion. Focus exclusively on DTC margin optimization.</p>
 </div>
 </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TRANSPARENCY / BUILD IN PUBLIC -->
+<section class="section" id="transparency">
+<span class="tag tag-green">Transparency &middot; Governance</span>
+<h2>Building the Company <span class="gradient-text">in Public</span></h2>
+<p style="color:var(--muted);max-width:780px;margin-top:16px">Investors will not be guessing what is happening with their capital. We are running this company on a two-track transparency model: a <strong style="color:var(--text)">public feed</strong> that anyone can follow &mdash; competitors included &mdash; and a <strong style="color:var(--text)">private investor dashboard</strong> where every dollar, every order, every metric is tracked against plan in real time, with a weekly note from the CEO and COO.</p>
+
+<div class="transparency-grid">
+
+  <!-- LEFT: Public feed -->
+  <div class="tpanel">
+    <div class="tpanel-header">
+      <div class="tpanel-title">Public Feed <span class="access">PUBLIC</span></div>
+      <div class="tpanel-meta"><span class="live-dot"></span> Live &middot; matchbox7.com/log</div>
+    </div>
+    <div class="feed-list">
+      <div class="feed-item">
+        <div class="feed-item-meta">
+          <div class="feed-author">Joe Stein <span class="badge">CEO</span></div>
+          <div>Apr 24, 2026</div>
+        </div>
+        <div class="feed-body">Mr. Bill's Formula Fusion development agreement signed. Bar formulation kicks off Monday &mdash; first chocolate-brownie taste test Tuesday. <em>Phase 1 officially in motion.</em></div>
+      </div>
+      <div class="feed-item">
+        <div class="feed-item-meta">
+          <div class="feed-author">Justin Fowler <span class="badge market">MARKET</span></div>
+          <div>Apr 22, 2026</div>
+        </div>
+        <div class="feed-body">Lilly's Q1 earnings call: oral GLP-1 launch on track for late 2026, ~80% GI side-effect rate in oral cohort. <em>Tailwind getting stronger &mdash; the patient pool needing companion nutrition is about to step-change.</em></div>
+      </div>
+      <div class="feed-item">
+        <div class="feed-item-meta">
+          <div class="feed-author">Joe Stein <span class="badge ops">OPS</span></div>
+          <div>Apr 20, 2026</div>
+        </div>
+        <div class="feed-body">Phase 1 budget breakdown posted publicly. $62K&ndash;$77K range; current run-rate $58K. Tracking lean by ~$14K vs plan thanks to delayed legal/insurance billing.</div>
+      </div>
+      <div class="feed-item">
+        <div class="feed-item-meta">
+          <div class="feed-author">Justin Fowler <span class="badge">COO</span></div>
+          <div>Apr 18, 2026</div>
+        </div>
+        <div class="feed-body">Bar v3.2 blind taste test: <strong>4.2/5.0</strong> (n=12). Iterating on chocolate coating shelf-stability at 85&deg;F. Anti-bloom additive trials next week.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Investor dashboard -->
+  <div class="tpanel private">
+    <div class="tpanel-header">
+      <div class="tpanel-title">Investor Dashboard <span class="access">INVESTORS</span></div>
+      <div class="tpanel-meta"><span class="live-dot"></span> Live &middot; refreshed hourly</div>
+    </div>
+
+    <div class="dash-kpis">
+      <div class="kpi">
+        <div class="kpi-label">Cash on Hand</div>
+        <div class="kpi-val" style="color:var(--accent3)">$483K</div>
+        <div class="kpi-delta ok">&uarr; $14K vs plan</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">MTD Burn</div>
+        <div class="kpi-val" style="color:var(--text)">$38K</div>
+        <div class="kpi-delta ok">vs $45K plan &middot; -16%</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Bar Run #1</div>
+        <div class="kpi-val" style="color:var(--gold)">0 / 25K</div>
+        <div class="kpi-delta flat">scheduled W8 &middot; on track</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Email List</div>
+        <div class="kpi-val" style="color:var(--accent)">1,247</div>
+        <div class="kpi-delta ok">&uarr; 312 WoW</div>
+      </div>
+    </div>
+
+    <div class="dash-section-lbl">Plan vs Actual</div>
+    <div class="dash-progress">
+      <div class="dash-progress-row">
+        <div class="dash-progress-meta"><span class="lbl">Phase 1 Budget</span><span class="val">$58K / $77K</span></div>
+        <div class="dash-bar"><div class="fill" style="width:75%"></div></div>
+      </div>
+      <div class="dash-progress-row">
+        <div class="dash-progress-meta"><span class="lbl">Gate 1 Criteria</span><span class="val">2 / 3 met</span></div>
+        <div class="dash-bar"><div class="fill" style="width:67%"></div></div>
+      </div>
+      <div class="dash-progress-row">
+        <div class="dash-progress-meta"><span class="lbl">Email List Growth</span><span class="val">124% of plan</span></div>
+        <div class="dash-bar"><div class="fill" style="width:100%"></div></div>
+      </div>
+    </div>
+
+    <div class="dash-section-lbl">This Week from Joe &amp; Justin</div>
+    <div class="dash-commentary">
+      <div class="who">Weekly Note &middot; Apr 28, 2026</div>
+      Mr. Bill's signed Friday. First chocolate-brownie taste test Tuesday. Cash position $14K ahead of plan &mdash; delayed legal billing, not pulled-forward revenue, so we are not banking it. On track to hit Gate 1 by Week 8.
+    </div>
+  </div>
+
+</div>
+
+<div class="commit-grid">
+  <div class="commit-card">
+    <div class="icon" style="color:var(--accent3)">&#9679;</div>
+    <h4>Every Dollar Tracked</h4>
+    <p>Line-item P&amp;L mapped to the financial model. Investors see actuals against plan; the public sees totals and category splits.</p>
+  </div>
+  <div class="commit-card">
+    <div class="icon" style="color:var(--accent2)">&#9679;</div>
+    <h4>Live Updates</h4>
+    <p>Public feed posts daily during active phases. Investor dashboard refreshes hourly &mdash; cash, orders, units shipped, CAC, CGS &mdash; pulled directly from systems of record.</p>
+  </div>
+  <div class="commit-card">
+    <div class="icon" style="color:var(--gold)">&#9679;</div>
+    <h4>Founder Commentary</h4>
+    <p>Weekly note from Joe and Justin in the dashboard. No PR-speak &mdash; what shipped, what slipped, what we changed our minds on, what's next.</p>
+  </div>
+  <div class="commit-card">
+    <div class="icon" style="color:var(--accent)">&#9679;</div>
+    <h4>Plan vs Actual</h4>
+    <p>Every metric maps back to the financial model and the decision gates. If we miss a gate criterion, you see it the same day &mdash; with the mitigation we are running.</p>
+  </div>
+</div>
+
 </section>
 
 <div class="divider"></div>
