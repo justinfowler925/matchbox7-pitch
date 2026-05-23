@@ -545,8 +545,8 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 <div style="margin-top:24px;background:linear-gradient(135deg,rgba(124,92,255,0.08),rgba(78,205,196,0.08));border:1px solid rgba(124,92,255,0.3);border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
 <div style="flex:1;min-width:280px">
 <div style="font-size:0.7rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Interactive Financial Model</div>
-<h3 style="font-size:1.2rem;margin-bottom:6px">MonchMonch Calculator v3.0</h3>
-<p style="color:var(--muted);font-size:0.9rem;margin:0">Edit any input &mdash; raw materials, channels, production runs, capital &mdash; and the full 5-year P&amp;L recalculates live. Full strategic cost analysis &amp; sources in the Guide tab.</p>
+<h3 style="font-size:1.2rem;margin-bottom:6px">MonchMonch Calculator v5.0</h3>
+<p style="color:var(--muted);font-size:0.9rem;margin:0">Edit any input &mdash; raw materials, channels, production runs, marketing/payroll/BD/clinical by year, ingredient licensing pipeline, capital plan &mdash; and the full 5-year P&amp;L recalculates live. Full strategic cost analysis &amp; sources in the Guide tab.</p>
 </div>
 <a href="https://monchmonch-calc.vercel.app/" target="_blank" rel="noopener" style="padding:14px 28px;background:var(--accent);color:white;text-decoration:none;border-radius:10px;font-weight:700;font-size:0.9rem;white-space:nowrap">Open Live Model &rarr;</a>
 </div>
@@ -558,24 +558,25 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 <h3 style="margin-bottom:16px">Protein + Fiber Bar</h3>
 <div class="unit-row"><span class="lbl">DTC Retail Price</span><span>$3.49/bar</span></div>
 <div class="unit-row"><span class="lbl">Wholesale Price (40% discount)</span><span>$2.09/bar</span></div>
-<div class="unit-row"><span class="lbl">COGS (at 25K run)</span><span>$1.59/bar</span></div>
-<div class="unit-row"><span class="lbl">COGS (at 100K run)</span><span>$1.35/bar</span></div>
+<div class="unit-row"><span class="lbl">All-in COGS (25K run, Tier 2)</span><span>$1.83/bar</span></div>
+<div class="unit-row"><span class="lbl">All-in COGS (100K run, Tier 3)</span><span>$1.64/bar</span></div>
+<div class="unit-row"><span class="lbl">All-in COGS (500K run, Tier 4)</span><span>$1.46/bar</span></div>
+<div class="unit-row"><span class="lbl">All-in COGS (1M+ run, Tier 5&ndash;6)</span><span>$1.34&ndash;$1.39/bar</span></div>
 <div class="unit-row"><span class="lbl">Formulation Cost (first flavor)</span><span>$7,500</span></div>
-<div class="unit-row"><span class="lbl">Additional Flavors</span><span>$5,000/each</span></div>
-<div class="unit-row"><span class="lbl">DTC Gross Margin</span><span>54.4% (at $1.59)</span></div>
-<div class="unit-row"><span class="lbl">DTC Gross Margin (at scale)</span><span>61.3% (at $1.35)</span></div>
-<div class="unit-row"><span>Wholesale Gross Margin</span><span>24.0% &rarr; 35.4%</span></div>
+<div class="unit-row"><span class="lbl">DTC Gross Margin (25K &rarr; 1M+ runs)</span><span>47.6% &rarr; 61.6%</span></div>
+<div class="unit-row"><span>Wholesale Gross Margin (25K &rarr; 1M+ runs)</span><span>12.4% &rarr; 35.9%</span></div>
 </div>
 <div class="unit-block">
 <h3 style="margin-bottom:16px">Electrolyte Packet <span style="font-size:0.75rem;color:var(--accent3);font-weight:500">(Bundle Companion)</span></h3>
 <div class="unit-row"><span class="lbl">DTC Retail Price</span><span>$1.49/packet</span></div>
 <div class="unit-row"><span class="lbl">Wholesale Price</span><span>$0.89/packet</span></div>
-<div class="unit-row"><span class="lbl">COGS</span><span>$1.10/packet</span></div>
-<div class="unit-row"><span class="lbl">Standalone DTC Gross Margin</span><span>26% (thin by design)</span></div>
-<div class="unit-row"><span class="lbl">Strategic role</span><span>Attach-rate driver, not margin SKU</span></div>
+<div class="unit-row"><span class="lbl">All-in COGS (50K run, Tier 2)</span><span>$0.73/packet</span></div>
+<div class="unit-row"><span class="lbl">All-in COGS (250K+ run)</span><span>$0.44&ndash;$0.59/packet</span></div>
+<div class="unit-row"><span class="lbl">DTC Gross Margin (50K &rarr; 1M+ runs)</span><span>51% &rarr; 70%</span></div>
+<div class="unit-row"><span class="lbl">Strategic role</span><span>Attach-rate driver + GLP-1 dehydration solve</span></div>
 <div class="unit-row"><span class="lbl">Clinical justification</span><span>GLP-1 dehydration (#2 side effect)</span></div>
 <div class="unit-row"><span class="lbl">Monthly subscription (30-day)</span><span>$44.70 (30 packets)</span></div>
-<div class="unit-row"><span>Existing factory capacity</span><span>166K servings/month</span></div>
+<div class="unit-row"><span>Existing factory capacity (end-product)</span><span>166K servings/month</span></div>
 </div>
 </div>
 
@@ -706,14 +707,40 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 </div>
 <div class="capacity-calc">
 <h3 style="margin-bottom:16px">Scale-Up Path</h3>
-<div class="cap-row"><span class="lbl">Year 1 Need (Base Case)</span><span>~22K servings/month avg</span></div>
-<div class="cap-row"><span class="lbl">Year 2 Need (Base Case)</span><span>~54K servings/month avg</span></div>
-<div class="cap-row"><span class="lbl">Current Capacity Utilization (Y1)</span><span>13%</span></div>
-<div class="cap-row"><span class="lbl">Current Capacity Utilization (Y2)</span><span>33%</span></div>
+<div class="cap-row"><span class="lbl">Year 1 Need &mdash; Bars Business (Base Case)</span><span>~22K servings/month avg</span></div>
+<div class="cap-row"><span class="lbl">Year 2 Need &mdash; Bars Business (Base Case)</span><span>~54K servings/month avg</span></div>
+<div class="cap-row"><span class="lbl">Current Capacity Utilization (Y1, bars)</span><span>13%</span></div>
+<div class="cap-row"><span class="lbl">Current Capacity Utilization (Y2, bars)</span><span>33%</span></div>
 <div class="cap-row"><span class="lbl">Second Factory Trigger Point</span><span>Y3+ &mdash; when licensing volume requires &gt;500 MT/yr fiber output</span></div>
 <div class="cap-row"><span class="lbl">US Co-Packer (Mr. Bill's) Status</span><span>Development agreement signed</span></div>
 <div class="cap-row"><span>Dual-Source Risk Mitigation</span><span>China + US co-packer active</span></div>
 </div>
+</div>
+
+<!-- INGREDIENT SUPPLY SCALING CALLOUT (Gap 3A) -->
+<div style="margin-top:32px;padding:24px;background:linear-gradient(135deg,rgba(78,205,196,0.06),rgba(124,92,255,0.04));border:1px solid rgba(78,205,196,0.25);border-radius:12px">
+<div style="font-size:0.7rem;color:var(--accent3);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px">Ingredient Supply Path</div>
+<h3 style="margin-bottom:12px">Scaling Monch Fiber for the Licensing Channel</h3>
+<p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px">The bars business runs comfortably on existing BioLumen capacity (166K servings/month = ~2M servings/yr of end-product). The <strong style="color:var(--text)">ingredient licensing channel</strong> is a different supply problem &mdash; a single mature deal at 500 MT/yr is ~125M servings of fiber, three orders of magnitude above current factory output. The licensing revenue ramp is staged accordingly:</p>
+<div class="unit-econ">
+<div class="unit-block">
+<h3 style="margin-bottom:12px;font-size:1rem">Licensing Deal Sizing by Year</h3>
+<div class="unit-row"><span class="lbl">Y2 pilot</span><span>5&ndash;15 MT &middot; smaller-MOQ early-mover terms &middot; ~$500K rev</span></div>
+<div class="unit-row"><span class="lbl">Y3 (2&ndash;3 deals)</span><span>15&ndash;50 MT/deal &middot; ~$3M rev combined</span></div>
+<div class="unit-row"><span class="lbl">Y4 (5 deals)</span><span>50&ndash;150 MT/deal &middot; ~$8M rev combined</span></div>
+<div class="unit-row"><span class="lbl">Y5 (8&ndash;10 deals)</span><span>100&ndash;300 MT/deal &middot; ~$18M rev combined</span></div>
+<div class="unit-row"><span><strong>Total Y5 fiber demand</strong></span><span style="color:var(--accent3)"><strong>~1,500&ndash;2,500 MT/yr</strong></span></div>
+</div>
+<div class="unit-block">
+<h3 style="margin-bottom:12px;font-size:1rem">Supply-Side Scale-Up Plan</h3>
+<div class="unit-row"><span class="lbl">Y1&ndash;Y2 supply</span><span>Existing BioLumen capacity (sufficient for bars + Y2 pilot)</span></div>
+<div class="unit-row"><span class="lbl">Y2&ndash;Y3 scale-up</span><span>In-house ~100 MT/yr expansion @ ~$0.18/serving</span></div>
+<div class="unit-row"><span class="lbl">Y3+ strategic co-dev</span><span>Cargill / Tate &amp; Lyle / ADM / IFF / DSM (3-way parallel RFP)</span></div>
+<div class="unit-row"><span class="lbl">Y4+ co-dev output</span><span>500+ MT/yr platform @ $0.09&ndash;$0.14/serving</span></div>
+<div class="unit-row"><span><strong>Y5 supply economics</strong></span><span style="color:var(--accent)"><strong>Blended $0.10/serving target</strong></span></div>
+</div>
+</div>
+<p style="color:var(--muted);font-size:0.85rem;margin-top:14px"><strong style="color:var(--text)">Why this works financially:</strong> The strategic co-dev path is funded out of operating cash flow from Y3 forward (post-EBITDA-breakeven), not from the $2.5M Seed. The Seed funds the bars launch + clinical validation + Y1&ndash;Y2 BD pipeline; ingredient supply CapEx comes after the first deal closes and proves the channel. This is the structural reason the model self-funds from Y3 without requiring a Series A.</p>
 </div>
 </section>
 
@@ -791,10 +818,10 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 <p class="bio">Principal at Mr. Bill's Formula Fusion. Leading protein bar formulation development. Signed development agreement April 2026. Manufacturing-ready formulations with scale-up capability.</p>
 </div>
 <div class="team-card">
-<div class="team-avatar" style="background:linear-gradient(135deg,var(--muted),var(--accent));color:#fff">+2</div>
-<h3>Support Staff</h3>
-<div class="role">To Be Named</div>
-<p class="bio">1&ndash;2 additional team members to be hired in Phase 1&ndash;2 for marketing execution and fulfillment operations management.</p>
+<div class="team-avatar" style="background:linear-gradient(135deg,var(--muted),var(--accent));color:#fff">+1</div>
+<h3>Lean by Design</h3>
+<div class="role">Y1 Contractor &middot; Y2 BD Lead</div>
+<p class="bio">Y1: 1 contractor for marketing execution + fulfillment ops support (founders take below-market salaries). Y2 first FTE hire: dedicated BD Lead for the ingredient licensing channel (12&ndash;24mo CPG enterprise sales cycles require specialist coverage). Y3+ adds R&amp;D / QA, sales, broker management as the licensing pipeline matures.</p>
 </div>
 </div>
 </section>
@@ -905,20 +932,17 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 <p style="color:var(--muted);max-width:700px;margin-top:16px">Three explicit go/no-go checkpoints where leadership and investors evaluate progress before committing further capital. This protects downside and ensures discipline.</p>
 
 <div class="card-grid">
-<div class="card" style="border-left:4px solid var(--accent)">
-<h3>Gate 1 &mdash; Week 8</h3>
-<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> Bar taste test passes 4.0+/5.0 AND first production run QC-approved AND Shopify store live.</p>
-<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Iterate formulation. Do not proceed to Phase 2 with subpar product. Capital preserved for re-attempt.</p>
+<div class="card" style="border-left:4px solid var(--accent)"><h3>Gate 1 &mdash; Week 8</h3>
+<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> Bar taste test passes 4.0+/5.0 AND first production run QC-approved AND Shopify store live AND clinical Y1 study protocol locked with CRO AND first ingredient buyer outreach list (10+ named targets) compiled.</p>
+<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Iterate formulation. Do not proceed to Phase 2 with subpar product or unprotocoled clinical. Capital preserved for re-attempt.</p>
 </div>
-<div class="card" style="border-left:4px solid var(--gold)">
-<h3>Gate 2 &mdash; Week 16</h3>
-<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> 200+ DTC bundle orders/month AND CAC validated below $30 on at least one paid channel AND clinical studies enrolled.</p>
-<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Reduce paid spend. Double down on organic/influencer. Reassess positioning before scaling.</p>
+<div class="card" style="border-left:4px solid var(--gold)"><h3>Gate 2 &mdash; Week 16</h3>
+<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> 200+ DTC bundle orders/month AND CAC validated below $45 on at least one paid channel AND clinical Y1 study enrolled AND 3+ ingredient buyer discovery calls completed with CPG brands building GLP-1 companion products.</p>
+<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Reduce paid spend. Double down on organic/influencer + founder-led BD on the licensing channel (the actual revenue engine). Reassess bars positioning before scaling.</p>
 </div>
-<div class="card" style="border-left:4px solid var(--accent3)">
-<h3>Gate 3 &mdash; Month 8</h3>
-<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> Monthly EBITDA loss trending toward zero AND wholesale has 15+ active doors AND repeat purchase rate &gt;25%.</p>
-<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Cut non-essential OpEx. Pause wholesale expansion. Focus exclusively on DTC margin optimization.</p>
+<div class="card" style="border-left:4px solid var(--accent3)"><h3>Gate 3 &mdash; Month 12</h3>
+<p style="margin-top:12px"><strong style="color:var(--text)">Criteria:</strong> Y1 bars run-rate ~$25K/mo AND clinical Y1 study results published AND first ingredient licensing pilot deal in advanced negotiation (LOI or term sheet stage) AND wholesale has 25&ndash;50 active doors.</p>
+<p style="margin-top:8px"><strong style="color:var(--accent2)">If fail:</strong> Cut non-essential consumer-marketing spend. Concentrate remaining capital on closing the first ingredient deal &mdash; the path to Y3 EBITDA breakeven runs through licensing, not bars.</p>
 </div>
 </div>
 </section>
@@ -1056,21 +1080,21 @@ footer .conf{font-size:0.7rem;margin-top:16px;opacity:0.5}
 <!-- KEY METRICS -->
 <section class="section">
 <span class="tag tag-purple">Success Metrics</span>
-<h2>What <span class="gradient-text">$2M+ Revenue</span> Looks Like</h2>
-<p style="color:var(--muted);max-width:700px;margin-top:16px">VC benchmark for CPG food brands: $1&ndash;3M revenue with a wholesale order proves product-market fit and investability. Our base case crosses $2M cumulative revenue in Month 16.</p>
+<h2>What <span class="gradient-text">Y3 Breakeven</span> Looks Like</h2>
+<p style="color:var(--muted);max-width:760px;margin-top:16px">VC benchmark for CPG ingredient platforms: $3&ndash;5M revenue with a signed B2B licensing deal proves the model and triggers Series A interest. Our base case crosses EBITDA breakeven in Month 25 (Year 3) on a single $2.5M Seed &mdash; no Series A required for the path through Y5.</p>
 
 <div class="fin-grid">
-<div class="fin-card"><div class="val" style="color:var(--accent)">$1.2M</div><div class="label">Year 1 Revenue (Base)</div></div>
-<div class="fin-card"><div class="val" style="color:var(--accent3)">$3.6M</div><div class="label">Year 2 Revenue (Base)</div></div>
-<div class="fin-card"><div class="val" style="color:var(--gold)">52%&rarr;57%</div><div class="label">Gross Margin Trajectory</div></div>
-<div class="fin-card"><div class="val" style="color:var(--accent2)">Month 8</div><div class="label">EBITDA Breakeven</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent)">$22.0M</div><div class="label">Year 5 Revenue (Combined: bars + licensing)</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent3)">+$9.92M</div><div class="label">Year 5 EBITDA (45% margin)</div></div>
+<div class="fin-card"><div class="val" style="color:var(--gold)">Month 25</div><div class="label">EBITDA Breakeven (Year 3)</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent2)">$15.0M</div><div class="label">Year 5 Cash Balance (self-funded post-Y3)</div></div>
 </div>
 
 <div class="fin-grid" style="margin-top:20px">
-<div class="fin-card"><div class="val" style="color:var(--accent)">380K</div><div class="label">Units Y1</div></div>
-<div class="fin-card"><div class="val" style="color:var(--accent3)">100+</div><div class="label">Wholesale Doors Y1</div></div>
-<div class="fin-card"><div class="val" style="color:var(--gold)">25%+</div><div class="label">Repeat Purchase Rate</div></div>
-<div class="fin-card"><div class="val" style="color:var(--accent2)">4.5x</div><div class="label">LTV:CAC Ratio</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent)">8&ndash;10</div><div class="label">Ingredient Licensing Deals (Y5)</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent3)">$0.50</div><div class="label">Target Per-Serving Licensing Price</div></div>
+<div class="fin-card"><div class="val" style="color:var(--gold)">75%</div><div class="label">Licensing Gross Margin</div></div>
+<div class="fin-card"><div class="val" style="color:var(--accent2)">$1.4M</div><div class="label">Cumulative Loss to Breakeven</div></div>
 </div>
 </section>
 
